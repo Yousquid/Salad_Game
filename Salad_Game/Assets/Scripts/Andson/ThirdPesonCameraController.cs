@@ -69,6 +69,7 @@ public class ThirdPesonCameraController : MonoBehaviour
         HandleZoom();
     }
 
+
      void HandleRotation()
     {
         yaw += lookInput.x * rotationSpeed * Time.deltaTime;
