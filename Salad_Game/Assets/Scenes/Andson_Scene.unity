@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 111290222}
   - component: {fileID: 111290223}
   - component: {fileID: 111290224}
+  - component: {fileID: 111290225}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -207,13 +208,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 111290218}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: -0, y: 0.99673605, z: -0, w: 0.08072961}
+  m_LocalPosition: {x: -1.441, y: 1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 170.739, z: 0}
 --- !u!114 &111290222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,12 +300,67 @@ MonoBehaviour:
   m_GameObject: {fileID: 111290218}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8c2998a94fd1ef48b51966209ef8c0b, type: 3}
+  m_Script: {fileID: 11500000, guid: 476328fe48c075b45b10a5bd5b4a1272, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerCameraController
-  followTarget: {fileID: 1216089347}
-  lookTarget: {fileID: 2076234448}
-  followSpeed: 10
+  m_EditorClassIdentifier: Assembly-CSharp::ThirdPesonCameraController
+  target: {fileID: 1216089347}
+  camPivot: {fileID: 0}
+  distance: 4
+  height: 0.5
+  shoulderOffset: {x: 0, y: 0}
+  rotationSpeed: 50
+  minPitch: -20
+  maxPitch: 70
+  rotationSmoothTime: 0.1
+  positionSmoothTime: 0.1
+  zoomedFOV: 35
+  zoomSpeed: 2
+--- !u!114 &111290225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111290218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInput
+  m_Actions: {fileID: -944628639613478452, guid: 6ee94bc6fee88e84f919472c436748a6, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 111290224}
+        m_TargetAssemblyTypeName: ThirdPesonCameraController, Assembly-CSharp
+        m_MethodName: OnLook
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 2dc335a5-4ca9-49cf-8b50-2667fdbe65e5
+    m_ActionName: 'Camera/Look[/Mouse/delta]'
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Camera
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &784729869
 GameObject:
   m_ObjectHideFlags: 0
@@ -613,7 +669,7 @@ Transform:
   m_GameObject: {fileID: 1216089346}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.826, y: 1.348, z: -3.533}
+  m_LocalPosition: {x: 1.29, y: 0.182, z: 0.055}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -814,6 +870,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   characterController: {fileID: 0}
+  cameraTransform: {fileID: 111290221}
   moveSpeed: 10
   rotationSpeed: 5
   jumpForce: 10

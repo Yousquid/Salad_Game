@@ -27,8 +27,8 @@ public class InputHandler : MonoBehaviour
     {
         Vector2 movementVector = moveAction.ReadValue<Vector2>();
         playerController.Move(movementVector);
-        Vector2 rotationVector = lookAction.ReadValue<Vector2>();
-        playerController.Rotate(rotationVector);
+        //Vector2 rotationVector = lookAction.ReadValue<Vector2>();
+        //playerController.Rotate(rotationVector);
     }
 
     void OnJumpPerformed(InputAction.CallbackContext context)

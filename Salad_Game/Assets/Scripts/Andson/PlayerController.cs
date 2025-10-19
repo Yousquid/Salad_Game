@@ -2,35 +2,45 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("References")]
     public CharacterController characterController;
+    public Transform cameraTransform; 
 
-    public float moveSpeed = 10f;
-    public float rotationSpeed = 5f;
+    [Header("Movement Settings")]
+    public float moveSpeed = 5f;
+    public float rotationSpeed = 10f;
     public float jumpForce = 10f;
     public float gravity = -30f;
 
-    private float rotationY;
     private float verticalVelocity;
+
     void Start()
     {
-        characterController = GetComponent<CharacterController>();
+        if (!characterController)
+            characterController = GetComponent<CharacterController>();
     }
 
-    // Update is called once per frame
     public void Move(Vector2 movementVector)
     {
-        Vector3 thisMove = transform.forward * movementVector.y + transform.right * movementVector.x;
-        thisMove = thisMove * moveSpeed * Time.deltaTime;
-        characterController.Move(thisMove);
+        Vector3 camForward = cameraTransform.forward;
+        Vector3 camRight = cameraTransform.right;
+        camForward.y = 0;
+        camRight.y = 0;
+        camForward.Normalize();
+        camRight.Normalize();
 
-        verticalVelocity = verticalVelocity + gravity * Time.deltaTime;
+        Vector3 moveDir = camForward * movementVector.y + camRight * movementVector.x;
+
+        characterController.Move(moveDir * moveSpeed * Time.deltaTime);
+
+        if (moveDir.sqrMagnitude > 0.01f)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(camForward, Vector3.up);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        }
+
+        verticalVelocity += gravity * Time.deltaTime;
         characterController.Move(new Vector3(0, verticalVelocity, 0) * Time.deltaTime);
-    }
-
-    public void Rotate(Vector2 rotationVector)
-    {
-        rotationY += rotationVector.x * rotationSpeed * Time.deltaTime;
-        transform.localRotation = Quaternion.Euler(0, rotationY, 0);
     }
 
     public void Jump()
