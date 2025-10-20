@@ -12,6 +12,7 @@ public class ThirdPesonCameraController : MonoBehaviour
     public float height = 1.7f;          // ¸ß¶È
     public Vector2 shoulderOffset = new Vector2(0.8f, 0); // ×óÓÒÆ«ÒÆ
     public float rotationSpeed = 120f;
+    public float mouseSensitivity = 1f;
 
     [Header("Rotation Limits")]
     public float minPitch = -40f;
@@ -72,8 +73,8 @@ public class ThirdPesonCameraController : MonoBehaviour
 
      void HandleRotation()
     {
-        yaw += lookInput.x * rotationSpeed * Time.deltaTime;
-        pitch -= lookInput.y * rotationSpeed * Time.deltaTime;
+        yaw += lookInput.x * rotationSpeed * mouseSensitivity * Time.deltaTime;
+        pitch -= lookInput.y * rotationSpeed * mouseSensitivity * Time.deltaTime;
         pitch = Mathf.Clamp(pitch, minPitch, maxPitch);
 
         Vector3 targetRotation = new Vector3(pitch, yaw);
