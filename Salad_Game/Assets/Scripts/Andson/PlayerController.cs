@@ -12,7 +12,13 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 10f;
     public float gravity = -30f;
 
+    [Header("Camera Rotation Settings")]
+    public float minPitch = -60f; // 最小俯角
+    public float maxPitch = 60f;  // 最大仰角
+    private float rotationX = 0f;
+
     private float verticalVelocity;
+    private float rotationY;
 
     void Start()
     {
@@ -43,6 +49,15 @@ public class PlayerController : MonoBehaviour
         characterController.Move(new Vector3(0, verticalVelocity, 0) * Time.deltaTime);
     }
 
+    public void Rotate(Vector2 rotationVector)
+    {
+        rotationY += rotationVector.x * rotationSpeed * Time.deltaTime;
+        rotationX -= rotationVector.y * rotationSpeed * Time.deltaTime;
+        rotationX = Mathf.Clamp(rotationX, minPitch, maxPitch);
+        transform.localRotation = Quaternion.Euler(rotationX, rotationY, 0);
+    }
+
+    
     public void Jump()
     {
         if (characterController.isGrounded)
