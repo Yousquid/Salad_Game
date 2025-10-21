@@ -1,17 +1,18 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Unity.Cinemachine;
 
 public class ThirdPesonCameraController : MonoBehaviour
 {
     [Header("References")]
-    public Transform target;             // 跟随目标（玩家）
-    public Transform camPivot;           // 相机旋转中心，可为空
+    public Transform target;           
+    public Transform camPivot;         
 
     [Header("Camera Settings")]
-    public float distance = 4f;          // 距离
-    public float height = 1.7f;          // 高度
-    public Vector2 shoulderOffset = new Vector2(0.8f, 0); // 左右偏移
+    public float distance = 4f;         
+    public float height = 1.7f;        
     public float rotationSpeed = 120f;
+    public float mouseSensitivity = 1f;
 
     [Header("Rotation Limits")]
     public float minPitch = -40f;
@@ -27,9 +28,8 @@ public class ThirdPesonCameraController : MonoBehaviour
     private float defaultFOV;
 
     private bool rightShoulder = true;
-    private Camera cam;
+    private  CinemachineCamera cam;
 
-    // Input System variables
     private Vector2 lookInput;
     private bool zoomPressed;
 
@@ -40,8 +40,7 @@ public class ThirdPesonCameraController : MonoBehaviour
 
     void Start()
     {
-        cam = GetComponent<Camera>();
-        defaultFOV = cam.fieldOfView;
+        cam = GetComponent<CinemachineCamera>();
 
         if (!target)
         {
@@ -72,8 +71,8 @@ public class ThirdPesonCameraController : MonoBehaviour
 
      void HandleRotation()
     {
-        yaw += lookInput.x * rotationSpeed * Time.deltaTime;
-        pitch -= lookInput.y * rotationSpeed * Time.deltaTime;
+        yaw += lookInput.x * rotationSpeed * mouseSensitivity * Time.deltaTime;
+        pitch -= lookInput.y * rotationSpeed * mouseSensitivity * Time.deltaTime;
         pitch = Mathf.Clamp(pitch, minPitch, maxPitch);
 
         Vector3 targetRotation = new Vector3(pitch, yaw);
@@ -83,13 +82,9 @@ public class ThirdPesonCameraController : MonoBehaviour
 
     void HandlePosition()
     {
-        // 计算偏移（肩膀视角）
-        Vector3 offset = camPivot.TransformDirection(new Vector3(
-            rightShoulder ? shoulderOffset.x : -shoulderOffset.x,
-            shoulderOffset.y,
-            0));
+      
 
-        Vector3 desiredPosition = camPivot.position + offset - camPivot.forward * distance;
+        Vector3 desiredPosition = camPivot.position  - camPivot.forward * distance;
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, positionSmoothTime);
         transform.position = smoothedPosition;
 
@@ -98,11 +93,9 @@ public class ThirdPesonCameraController : MonoBehaviour
 
     void HandleZoom()
     {
-        float targetFOV = zoomPressed ? zoomedFOV : defaultFOV;
-        cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, targetFOV, Time.deltaTime * zoomSpeed);
+       
     }
 
-    // ======== Input System Callbacks ========
 
     public void OnLook(InputAction.CallbackContext context)
     {
