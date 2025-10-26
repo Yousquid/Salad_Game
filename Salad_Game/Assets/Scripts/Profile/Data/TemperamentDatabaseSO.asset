@@ -20,9 +20,6 @@ MonoBehaviour:
     - dsfasdf
     taglineTexts:
     - adskjhfnqw.ehlrajdekfbawf
-    questions:
-    - question: sdfasdasd?
-      answer: adsfasdfasdf
   - temperament: Passive
     aboutMeTexts:
     - sadfewqerqwfdasf
@@ -30,6 +27,10 @@ MonoBehaviour:
     - fdhyteht
     taglineTexts:
     - tyrtgadfa
-    questions:
-    - question: sdfasdfhjl
-      answer: dsfowiqefdfkl
+  - temperament: 111221233
+    aboutMeTexts:
+    - fqfdf
+    personalityTexts:
+    - adfadsfa
+    taglineTexts:
+    - gggg

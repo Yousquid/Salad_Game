@@ -1,38 +1,46 @@
-using UnityEngine;
-using UnityEngine.EventSystems;
+﻿using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class Navigation : MonoBehaviour, IBeginDragHandler, IEndDragHandler
+public class Navigation : MonoBehaviour
 {
     [Header("Profile System")]
     public ProfileUI profileUI;
     public ProfileDataGenerator profileGenerator;
-    public string[] temperamentFilters;
 
-    [Header("Swipe Settings")]
+    [Header("Mouse Swipe Settings")]
+    [Range(0.05f, 0.5f)]
     public float swipeThreshold = 0.15f;
 
     private Vector2 startPos;
+    private bool isDragging;
     private float screenWidth;
 
     void Start()
     {
-        screenWidth = Screen.width;
-
+        screenWidth = Mathf.Max(1, Screen.width);
         GenerateNewProfile();
     }
 
-    public void OnBeginDrag(PointerEventData eventData)
+    void Update()
     {
-        startPos = eventData.position;
-    }
+        var mouse = Mouse.current;
+        if (mouse == null) return;
 
-    public void OnEndDrag(PointerEventData eventData)
-    {
-        float deltaX = (eventData.position.x - startPos.x) / screenWidth;
-
-        if (Mathf.Abs(deltaX) > swipeThreshold)
+        if (mouse.leftButton.wasPressedThisFrame)
         {
-            GenerateNewProfile();
+            isDragging = true;
+            startPos = mouse.position.ReadValue();
+        }
+
+        if (mouse.leftButton.wasReleasedThisFrame && isDragging)
+        {
+            Vector2 endPos = mouse.position.ReadValue();
+            float deltaX = (endPos.x - startPos.x) / screenWidth;
+
+            if (Mathf.Abs(deltaX) > swipeThreshold)
+                GenerateNewProfile();
+
+            isDragging = false;
         }
     }
 
@@ -43,8 +51,7 @@ public class Navigation : MonoBehaviour, IBeginDragHandler, IEndDragHandler
             return;
         }
 
-        var newProfile = profileGenerator.GenerateProfileData(temperamentFilters);
-
+        var newProfile = profileGenerator.GenerateProfileData();
         profileUI.UpdateUI(newProfile);
     }
 }
