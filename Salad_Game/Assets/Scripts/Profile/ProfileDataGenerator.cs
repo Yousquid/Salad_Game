@@ -7,6 +7,7 @@ using UnityEngine.UIElements;
 
 public class ProfileDataGenerator : MonoBehaviour
 {
+    public NameDatabaseSO nameDatabase;
     public TemperamentDatabaseSO temperamentDatabase;
     public Vector2Int ageAmtRange;
     [Range(0, 1)] public float verifiedRate;
@@ -34,7 +35,7 @@ public class ProfileDataGenerator : MonoBehaviour
         }
 
         ProfileData profileData = new ProfileData();
-        profileData.Name = Random.Range(0, 10000).ToString();
+        profileData.Name = nameDatabase.names[Random.Range(0, nameDatabase.names.Length)];
         profileData.Age = Random.Range(ageAmtRange.x, ageAmtRange.y + 1);
         profileData.Verified = Random.Range(0f, 1f) < verifiedRate;
         profileData.TagLine = GetTagLine(dataBases);
