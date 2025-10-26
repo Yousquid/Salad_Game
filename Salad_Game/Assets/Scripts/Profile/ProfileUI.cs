@@ -5,6 +5,7 @@ using Sirenix.OdinInspector;
 public class ProfileUI : MonoBehaviour
 {
     public string[] testTemperaments;
+    public ProfileDataGenerator profileDataGenerator;
     public TMP_Text Name;
     public TMP_Text Age;
     public Image VerifiedIcon;
@@ -19,7 +20,7 @@ public class ProfileUI : MonoBehaviour
     [Button]
     public void TestUpdateUI()
     {
-        UpdateUI(FindFirstObjectByType<ProfileDataGenerator>().GenerateProfileData(testTemperaments));
+        UpdateUI(profileDataGenerator.GenerateProfileData(testTemperaments));
     }
     public void UpdateUI(ProfileData profileData)
     {

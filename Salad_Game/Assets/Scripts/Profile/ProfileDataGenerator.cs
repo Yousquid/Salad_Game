@@ -64,10 +64,10 @@ public class ProfileDataGenerator : MonoBehaviour
         for (int i = 0; i < results.Length; i++)
         {
             var r = Random.Range(0, database.Length);
-            var interest = database[r];
-            if (!results.Contains(interest) || _maxTriesCounter > MAX_TRIES)
+            var selected = database[r];
+            if (!results.Contains(selected) || _maxTriesCounter > MAX_TRIES)
             {
-                results[i] = interest;
+                results[i] = selected;
                 _maxTriesCounter = 0;
             }
             else
