@@ -4,7 +4,6 @@ using UnityEngine.UI;
 using Sirenix.OdinInspector;
 public class ProfileUI : MonoBehaviour
 {
-    public string[] testTemperaments;
     public ProfileDataGenerator profileDataGenerator;
     public TMP_Text Name;
     public TMP_Text Age;
@@ -21,7 +20,7 @@ public class ProfileUI : MonoBehaviour
     [Button]
     public void TestUpdateUI()
     {
-        UpdateUI(profileDataGenerator.GenerateProfileData(testTemperaments));
+        UpdateUI(profileDataGenerator.GenerateProfileData());
     }
     public void UpdateUI(ProfileData profileData)
     {

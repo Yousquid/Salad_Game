@@ -636,6 +636,14 @@ PrefabInstance:
       propertyPath: nameDatabase
       value: 
       objectReference: {fileID: 11400000, guid: 2e28566fd74ab4df4a2df147d3d2cc2b, type: 2}
+    - target: {fileID: 4636207689147096692, guid: e53967958162c4f669e69b8247a08308, type: 3}
+      propertyPath: temperamentAmtRange.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636207689147096692, guid: e53967958162c4f669e69b8247a08308, type: 3}
+      propertyPath: temperamentAmtRange.y
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -835,7 +843,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3099228360141809933, guid: d33a18852cbdd414ea22ea3732bcbf07, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -308.50052
+      value: -308.5005
       objectReference: {fileID: 0}
     - target: {fileID: 3358626042149799314, guid: d33a18852cbdd414ea22ea3732bcbf07, type: 3}
       propertyPath: m_AnchorMax.y
