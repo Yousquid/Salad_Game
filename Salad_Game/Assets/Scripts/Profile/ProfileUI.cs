@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using Sirenix.OdinInspector;
 public class ProfileUI : MonoBehaviour
 {
+    public string[] testTemperaments;
     public TMP_Text Name;
     public TMP_Text Age;
     public Image VerifiedIcon;
@@ -16,7 +17,11 @@ public class ProfileUI : MonoBehaviour
     public Transform QuestionsParent;
     
     [Button]
-    public void UpdateUI(ProfileDataSO profileData)
+    public void TestUpdateUI()
+    {
+        UpdateUI(FindFirstObjectByType<ProfileDataGenerator>().GenerateProfileData(testTemperaments));
+    }
+    public void UpdateUI(ProfileData profileData)
     {
         Name.text = profileData.Name;
         Age.text = profileData.Age.ToString();
@@ -47,7 +52,7 @@ public class ProfileUI : MonoBehaviour
         {
             Destroy(QuestionsParent.GetChild(i).gameObject);
         }
-        foreach (Question question in profileData.Questions)
+        foreach (QAData question in profileData.QAs)
         {
             var questionObject = Instantiate(QuestionPrefab, QuestionsParent).GetComponent<TextMeshProUGUI>();
             questionObject.text = question.question;

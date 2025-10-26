@@ -444,7 +444,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -258.501}
+  m_AnchoredPosition: {x: 0, y: -258.5}
   m_SizeDelta: {x: 600, y: 900}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &191976229
@@ -748,6 +748,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc2aabdfb0f9843e5a045cba7eee9682, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ProfileUI
+  testTemperaments:
+  - Passive
   Name: {fileID: 933948602}
   Age: {fileID: 154078594}
   VerifiedIcon: {fileID: 2011552008}
@@ -1228,6 +1230,60 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 600, y: 80.8}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &876512188
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 876512190}
+  - component: {fileID: 876512189}
+  m_Layer: 0
+  m_Name: ProfileDataGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &876512189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 876512188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f7dbe25cc508496aba78e1be8ec90ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ProfileDataGenerator
+  temperamentDatabase: {fileID: 11400000, guid: 098a863fd8dd64abfaaca5b7fbdea19d, type: 2}
+  ageAmtRange: {x: 5, y: 10}
+  verifiedRate: 0.7
+  personalitiesAmtRange: {x: 1, y: 2}
+  tagsAmtRange: {x: 0, y: 1}
+  tagsDatabase: {fileID: 11400000, guid: 96614cf880a3d4faebba9d47f7072710, type: 2}
+  interestsAmtRange: {x: 0, y: 1}
+  interestsDatabase: {fileID: 11400000, guid: f8a6001848b28449ab047daf146c4ae8, type: 2}
+  qaAmtRange: {x: 0, y: 1}
+  qaDatabase: {fileID: 11400000, guid: c0133635f059b4e2b976394ac3da295f, type: 2}
+--- !u!4 &876512190
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 876512188}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1092.098, y: 120.45796, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &933948600
 GameObject:
   m_ObjectHideFlags: 0
@@ -1965,8 +2021,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2097160476}
   m_HandleRect: {fileID: 2097160475}
   m_Direction: 2
-  m_Value: 1.0000019
-  m_Size: 0.4255405
+  m_Value: 1
+  m_Size: 0.42531726
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3869,3 +3925,4 @@ SceneRoots:
   - {fileID: 1504495567}
   - {fileID: 941461024}
   - {fileID: 8692117}
+  - {fileID: 876512190}
