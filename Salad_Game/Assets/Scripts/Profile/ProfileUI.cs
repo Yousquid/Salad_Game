@@ -9,6 +9,7 @@ public class ProfileUI : MonoBehaviour
     public TMP_Text Name;
     public TMP_Text Age;
     public Image VerifiedIcon;
+    public TMP_Text TagLineText;
     public TMP_Text AboutMeText;
     public GameObject InterestBubblePrefab;
     public Transform InterestsBubblesParent;
@@ -27,6 +28,7 @@ public class ProfileUI : MonoBehaviour
         Name.text = profileData.Name;
         Age.text = profileData.Age.ToString();
         VerifiedIcon.enabled = profileData.Verified;
+        TagLineText.text = profileData.TagLine;
         AboutMeText.text = profileData.AboutMe;
 
         for (int i = InterestsBubblesParent.childCount - 1; i >= 0; i--)

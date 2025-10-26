@@ -37,6 +37,7 @@ public class ProfileDataGenerator : MonoBehaviour
         profileData.Name = Random.Range(0, 10000).ToString();
         profileData.Age = Random.Range(ageAmtRange.x, ageAmtRange.y + 1);
         profileData.Verified = Random.Range(0f, 1f) < verifiedRate;
+        profileData.TagLine = GetTagLine(dataBases);
         profileData.AboutMe = GetAboutMe(dataBases);
         profileData.Interests = GetFromDatabase(interestsAmtRange, interestsDatabase.interests);
         profileData.MoreAboutMe = GetMoreAboutMe(dataBases);
@@ -78,6 +79,17 @@ public class ProfileDataGenerator : MonoBehaviour
         }
 
         return results;
+    }
+
+    private string GetTagLine(TemperamentDataBase[] dataBases)
+    {
+        var tagLines = new List<string>();
+        Debug.Log(dataBases.Length);
+        for (int i = 0; i < dataBases.Length; i++)
+        {
+            tagLines = tagLines.Concat(dataBases[i].taglineTexts).ToList();
+        }
+        return tagLines[Random.Range(0, tagLines.Count)];
     }
     private string[] GetMoreAboutMe(TemperamentDataBase[] dataBases)
     {

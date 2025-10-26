@@ -18,6 +18,7 @@ public class ProfileData
     public string Name;
     public int Age;
     public bool Verified;
+    public string TagLine;
     [TextArea(2, 5)]
     public string AboutMe;
     public string[] Interests;
