@@ -53,7 +53,6 @@ public class ProfileUI : MonoBehaviour
             Nope = GameObject.Find("Nope")?.GetComponent<RectTransform>();       
         }
     }
-
     private void Update()
     {
         // Handle super like
@@ -70,6 +69,12 @@ public class ProfileUI : MonoBehaviour
                 superLikeLocalScaleRange.y, superLikeLocalScaleRange.x);
             s = Mathf.Clamp(s, superLikeLocalScaleRange.x, superLikeMaxScale);
             SuperLike.localScale = new Vector3(s, s, s);
+        }
+        else
+        {
+            SuperLike.anchoredPosition = SuperLike.anchoredPosition.SetY(superLikeYRange.x);
+            SuperLike.localScale = new Vector3(superLikeLocalScaleRange.x, superLikeLocalScaleRange.x,
+                superLikeLocalScaleRange.x);       
         }
 
         // Handle like
@@ -118,6 +123,8 @@ public class ProfileUI : MonoBehaviour
 
     public void UpdateUI(ProfileData profileData)
     {
+        ScrollRect.verticalNormalizedPosition = 1f;
+        
         Name.text = profileData.Name;
         Age.text = profileData.Age.ToString() + " mos";
         VerifiedIcon.enabled = profileData.Verified;
