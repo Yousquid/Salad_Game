@@ -45,12 +45,12 @@ public class ProfileUI : MonoBehaviour
 
         if (Like == null)
         {
-            Like = GameObject.Find("Like").GetComponent<RectTransform>();
+            Like = GameObject.Find("Like")?.GetComponent<RectTransform>();
         }
 
         if (Nope == null)
         {
-            Nope = GameObject.Find("Nope").GetComponent<RectTransform>();       
+            Nope = GameObject.Find("Nope")?.GetComponent<RectTransform>();       
         }
     }
 
