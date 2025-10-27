@@ -519,7 +519,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3099228360141809933, guid: d33a18852cbdd414ea22ea3732bcbf07, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -308.50098
+      value: -308.5007
       objectReference: {fileID: 0}
     - target: {fileID: 3358626042149799314, guid: d33a18852cbdd414ea22ea3732bcbf07, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1118,6 +1118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Navigation
   profileUI: {fileID: 1256635790}
   profileGenerator: {fileID: 574018366}
+  randomFruit: {fileID: 1689853191}
   swipeThreshold: 0.3
   rotationMultiplier: 10
   returnSpeed: 10
