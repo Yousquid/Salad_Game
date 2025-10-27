@@ -4,17 +4,16 @@ using System.Collections.Generic;
 
 public class RandomFruit : MonoBehaviour
 {
-    [Header("List 1: Eyes")]
-    public List<GameObject> partListA;
+    [Header("List 1: Eyes")] public List<GameObject> partListA;
 
-    [Header("List 2: Body")]
-    public List<GameObject> partListB;
+    [Header("List 2: Body")] public List<GameObject> partListB;
 
-    [Header("List 3: Decoration")]
-    public List<GameObject> partListC;
+    [Header("List 3: Decoration")] public List<GameObject> partListC;
 
-    [Header("Position")]
-    public Transform spawnPoint;
+    [Header("Position")] public Transform spawnPoint;
+
+    public bool useSpawnOffset = false;
+    public Vector3 spawnOffset;
 
     private GameObject currentCombined;
 
@@ -57,8 +56,17 @@ public class RandomFruit : MonoBehaviour
         GameObject objB = Instantiate(b, spawnPoint.position, Quaternion.identity, currentCombined.transform);
         GameObject objC = Instantiate(c, spawnPoint.position, Quaternion.identity, currentCombined.transform);
 
-        objA.transform.localPosition = new Vector3(0, 0, 0);
-        objB.transform.localPosition = new Vector3(0, 0, 0);
-        objC.transform.localPosition = new Vector3(0, 0, 0);
+        if (useSpawnOffset)
+        {
+            objA.transform.localPosition = spawnOffset;
+            objB.transform.localPosition = spawnOffset;
+            objC.transform.localPosition = spawnOffset;
+        }
+        else
+        {
+            objA.transform.localPosition = new Vector3(0, 0, 0);
+            objB.transform.localPosition = new Vector3(0, 0, 0);
+            objC.transform.localPosition = new Vector3(0, 0, 0);
+        }
     }
 }

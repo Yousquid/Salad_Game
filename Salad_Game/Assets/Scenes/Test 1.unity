@@ -519,7 +519,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3099228360141809933, guid: d33a18852cbdd414ea22ea3732bcbf07, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -315.97675
+      value: -308.50012
       objectReference: {fileID: 0}
     - target: {fileID: 3358626042149799314, guid: d33a18852cbdd414ea22ea3732bcbf07, type: 3}
       propertyPath: m_AnchorMax.y
@@ -696,6 +696,14 @@ PrefabInstance:
     - target: {fileID: 4995822011568101734, guid: d33a18852cbdd414ea22ea3732bcbf07, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177850450814409749, guid: d33a18852cbdd414ea22ea3732bcbf07, type: 3}
+      propertyPath: likeRangeX.y
+      value: -350
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177850450814409749, guid: d33a18852cbdd414ea22ea3732bcbf07, type: 3}
+      propertyPath: nopeRangeX.y
+      value: 350
       objectReference: {fileID: 0}
     - target: {fileID: 5177850450814409749, guid: d33a18852cbdd414ea22ea3732bcbf07, type: 3}
       propertyPath: profileDataGenerator
@@ -1065,7 +1073,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -1157,6 +1165,8 @@ MonoBehaviour:
   partListC:
   - {fileID: 4618780874965430401, guid: 624ed6c53eec9437aabd805250c667ec, type: 3}
   spawnPoint: {fileID: 1689853192}
+  useSpawnOffset: 1
+  spawnOffset: {x: 0, y: 0.5, z: 0}
 --- !u!4 &1689853192
 Transform:
   m_ObjectHideFlags: 0
@@ -1224,7 +1234,7 @@ MonoBehaviour:
   profileUI: {fileID: 1256635790}
   profileGenerator: {fileID: 574018366}
   randomFruit: {fileID: 1689853191}
-  swipeThreshold: 0.3
+  swipeThreshold: 0.5
   rotationMultiplier: 10
   returnSpeed: 10
   maxTilt: 15
