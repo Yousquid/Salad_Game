@@ -19,28 +19,90 @@ public class ProfileUI : MonoBehaviour
     public Transform MoreAboutMeBubblesParent;
     public GameObject QuestionPrefab;
     public Transform QuestionsParent;
-    public RectTransform SuperLike;
+
+    [Header("Super Like")] public RectTransform SuperLike;
     public Vector2 superLikeYRange;
     public Vector2 superLikeLocalScaleRange;
     public float superShowThresholdY = 0.5f;
+    public float superShowThresholdYMin = 0.2f;
+    public float superLikeMaxScale = 1.8f;
+
+    [Header("Like & Nope")] public RectTransform Like;
+    public Vector2 likeRangeX;
+    public Vector2 likeRangeScale;
+    public Vector2 likeRotationMapZ;
+    public RectTransform Nope;
+    public Vector2 nopeRangeX;
+    public Vector2 nopeRotationMapZ;
+
+    private RectTransform _rectTransform;
+
+    private void Awake()
+    {
+        _rectTransform = GetComponent<RectTransform>();
+
+        if (Like == null)
+        {
+            Like = GameObject.Find("Like").GetComponent<RectTransform>();
+        }
+
+        if (Nope == null)
+        {
+            Nope = GameObject.Find("Nope").GetComponent<RectTransform>();       
+        }
+    }
 
     private void Update()
     {
-        // Debug.Log(ScrollRect.verticalNormalizedPosition);
-
+        // Handle super like
         if (ScrollRect.verticalNormalizedPosition < superShowThresholdY)
         {
-            var y = ExtensionMethods.Map(ScrollRect.verticalNormalizedPosition, 0, superShowThresholdY,
+            var y = ExtensionMethods.Map(ScrollRect.verticalNormalizedPosition, superShowThresholdYMin,
+                superShowThresholdY,
                 superLikeYRange.y, superLikeYRange.x);
             y = Mathf.Clamp(y, superLikeYRange.x, superLikeYRange.y);
-            var s = ExtensionMethods.Map(ScrollRect.verticalNormalizedPosition, 0, superShowThresholdY,
-                superLikeLocalScaleRange.y, superLikeLocalScaleRange.x);
             SuperLike.anchoredPosition = SuperLike.anchoredPosition.SetY(y);
+            
+            var s = ExtensionMethods.Map(ScrollRect.verticalNormalizedPosition, superShowThresholdYMin,
+                superShowThresholdY,
+                superLikeLocalScaleRange.y, superLikeLocalScaleRange.x);
+            s = Mathf.Clamp(s, superLikeLocalScaleRange.x, superLikeMaxScale);
             SuperLike.localScale = new Vector3(s, s, s);
         }
-        else
+
+        // Handle like
+        if (Like != null)
         {
-            SuperLike.anchoredPosition = SuperLike.anchoredPosition.SetY(superLikeYRange.x);
+            var rotationZ = _rectTransform.eulerAngles.z;
+            if (Mathf.Abs(rotationZ) > 180)
+            {
+                rotationZ = Mathf.Abs(rotationZ) - 360;
+            }
+
+            var x = ExtensionMethods.Map(rotationZ, likeRotationMapZ.x, likeRotationMapZ.y,
+                likeRangeX.x, likeRangeX.y);
+            Like.anchoredPosition = Like.anchoredPosition.SetX(x);
+            
+            var s = ExtensionMethods.Map(rotationZ, likeRotationMapZ.x, likeRotationMapZ.y,
+                likeRangeScale.x, likeRangeScale.y);
+            Like.localScale = new Vector3(s, s, s);
+        }
+        
+        if (Nope != null)
+        {
+            var rotationZ = _rectTransform.eulerAngles.z;
+            if (Mathf.Abs(rotationZ) > 180)
+            {
+                rotationZ = Mathf.Abs(rotationZ) - 360;
+            }
+
+            var x = ExtensionMethods.Map(rotationZ, nopeRotationMapZ.x, nopeRotationMapZ.y,
+                nopeRangeX.x, nopeRangeX.y);
+            Nope.anchoredPosition = Nope.anchoredPosition.SetX(x);
+            
+            var s = ExtensionMethods.Map(rotationZ, nopeRotationMapZ.x, nopeRotationMapZ.y,
+                likeRangeScale.x, likeRangeScale.y);
+            Nope.localScale = new Vector3(s, s, s);
         }
     }
 
@@ -53,7 +115,7 @@ public class ProfileUI : MonoBehaviour
     public void UpdateUI(ProfileData profileData)
     {
         Name.text = profileData.Name;
-        Age.text = profileData.Age.ToString();
+        Age.text = profileData.Age.ToString() + " mos";
         VerifiedIcon.enabled = profileData.Verified;
         TagLineText.text = profileData.TagLine;
         AboutMeText.text = profileData.AboutMe;

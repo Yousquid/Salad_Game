@@ -519,7 +519,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 2207333660597890774}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.383
+  m_Size: 0.3828047
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1167,7 +1167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.039215688}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1211,8 +1211,17 @@ MonoBehaviour:
   QuestionsParent: {fileID: 3502307181493761657}
   SuperLike: {fileID: 4929982004300993922}
   superLikeYRange: {x: -100, y: 400}
-  superLikeLocalScaleRange: {x: 0.8, y: 1.5}
-  superShowThresholdY: 0.5
+  superLikeLocalScaleRange: {x: 0.1, y: 0.4}
+  superShowThresholdY: 0.6
+  superShowThresholdYMin: 0.55
+  superLikeMaxScale: 1.5
+  Like: {fileID: 0}
+  likeRangeX: {x: 100, y: -250}
+  likeRangeScale: {x: 0.5, y: 3}
+  likeRotationMapZ: {x: 0, y: -15}
+  Nope: {fileID: 0}
+  nopeRangeX: {x: -100, y: 250}
+  nopeRotationMapZ: {x: 0, y: 15}
 --- !u!1 &4054834262537965913
 GameObject:
   m_ObjectHideFlags: 0
@@ -1538,7 +1547,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 72.2, y: 15}
+  m_AnchoredPosition: {x: 228, y: 15}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7289822271103422894
@@ -1975,7 +1984,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -308.5}
+  m_AnchoredPosition: {x: 0, y: -308.49997}
   m_SizeDelta: {x: 600, y: 1000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3321144116543883393
@@ -2069,7 +2078,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 35
+  m_text: 35 mos
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a99e5e0b9480c4db9ba0f81b9d598579, type: 2}
   m_sharedMaterial: {fileID: 3419479137846538451, guid: a99e5e0b9480c4db9ba0f81b9d598579, type: 2}
@@ -2134,7 +2143,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -159.45581, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2276,7 +2285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.98039216, g: 0.98039216, b: 0.98039216, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
