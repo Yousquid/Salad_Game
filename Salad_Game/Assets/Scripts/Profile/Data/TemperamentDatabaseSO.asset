@@ -17,7 +17,7 @@ MonoBehaviour:
     aboutMeTexts:
     - jkdshalfhjasdhjf
     personalityTexts:
-    - dsfasdf
+    - Warm
     taglineTexts:
     - "Sun-grown and soil-fed. I\u2019m just looking for someone who loves quiet
       mornings."
@@ -32,7 +32,7 @@ MonoBehaviour:
     aboutMeTexts:
     - sadfewqerqwfdasf
     personalityTexts:
-    - fdhyteht
+    - 'Sincere '
     taglineTexts:
     - Too honest for small talk.
     - Real over perfect, always.
@@ -46,7 +46,7 @@ MonoBehaviour:
     aboutMeTexts:
     - 
     personalityTexts:
-    - 
+    - Patient
     taglineTexts:
     - "Good things take time \u2014 and I don\u2019t mind waiting."
     - I move slowly, but with purpose.
@@ -60,7 +60,7 @@ MonoBehaviour:
     aboutMeTexts:
     - 
     personalityTexts:
-    - 
+    - Flirty
     taglineTexts:
     - 'ME? Sweet, juicy, and maybe a little dramatic. '
     - "I\u2019m technically a vegetable, or a fruit? But let\u2019s not make it weird."
@@ -75,7 +75,7 @@ MonoBehaviour:
     aboutMeTexts:
     - 
     personalityTexts:
-    - 
+    - Passionate
     taglineTexts:
     - "I don\u2019t do halfway \u2014 not in life, not in love."
     - "If I care, you\u2019ll feel it."
@@ -89,7 +89,7 @@ MonoBehaviour:
     aboutMeTexts:
     - 
     personalityTexts:
-    - 
+    - 'Energetic '
     taglineTexts:
     - "Always laughing at my own jokes \u2014 someone has to."
     - Everything feels like an adventure if you let it.
@@ -103,7 +103,7 @@ MonoBehaviour:
     aboutMeTexts:
     - 
     personalityTexts:
-    - 
+    - Thoughtful
     taglineTexts:
     - Peace is something I practice, not wait for.
     - "I feel things deeply, and I\u2019m okay with that."
@@ -115,7 +115,7 @@ MonoBehaviour:
     aboutMeTexts:
     - 
     personalityTexts:
-    - 
+    - Sensitive
     taglineTexts:
     - "Layers upon layers \u2014 peel at your own risk."
     - I care deeply, quietly, and sometimes clumsily.
@@ -129,7 +129,7 @@ MonoBehaviour:
     aboutMeTexts:
     - 
     personalityTexts:
-    - 
+    - Shy
     taglineTexts:
     - A little shy, a lot sincere.
     - I smile more than I speak.
@@ -140,7 +140,7 @@ MonoBehaviour:
     aboutMeTexts:
     - 
     personalityTexts:
-    - 
+    - Emotional
     taglineTexts:
     - "If I care, you\u2019ll feel it."
     - "Layers upon layers \u2014 peel at your own risk."
@@ -152,7 +152,7 @@ MonoBehaviour:
     aboutMeTexts:
     - 
     personalityTexts:
-    - 
+    - Romantic
     taglineTexts:
     - I believe every glance has a story.
     - "Some people fall asleep to rain \u2014 I fall asleep to memories."
@@ -166,7 +166,7 @@ MonoBehaviour:
     aboutMeTexts:
     - 
     personalityTexts:
-    - 
+    - Nostalgic
     taglineTexts:
     - I remember feelings more than events.
     - "Some memories stay, even when people don\u2019t."
@@ -180,7 +180,7 @@ MonoBehaviour:
     aboutMeTexts:
     - 
     personalityTexts:
-    - 
+    - Peaceful
     taglineTexts:
     - "I like peace, soft rain, and people who don\u2019t shout. "
     - Fresh mind, clean heart.
@@ -194,7 +194,7 @@ MonoBehaviour:
     aboutMeTexts:
     - 
     personalityTexts:
-    - 
+    - Kind
     taglineTexts:
     - "I care, sometimes too much \u2014 but I\u2019d rather that than not enough."
     - I water my friends more than my plants.
@@ -205,7 +205,7 @@ MonoBehaviour:
     aboutMeTexts:
     - 
     personalityTexts:
-    - 
+    - Quiet
     taglineTexts:
     - I listen first, speak later.
     - Still water, deep thoughts.
@@ -215,8 +215,10 @@ MonoBehaviour:
     - Quiet strength, warm intentions.
     - I find peace between breaths.
   - temperament: Daring
-    aboutMeTexts: []
-    personalityTexts: []
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Daring
     taglineTexts:
     - "I don\u2019t wait for chances \u2014 I make them."
     - "I\u2019m not afraid of falling, only of standing still."
@@ -227,8 +229,10 @@ MonoBehaviour:
     - "My favorite kind of challenge is the one I wasn\u2019t ready for."
     - Comfort zones are for naps.
   - temperament: Charismatic
-    aboutMeTexts: []
-    personalityTexts: []
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Charismatic
     taglineTexts:
     - I flirt with life, not just people.
     - I collect people, not followers.
@@ -237,8 +241,10 @@ MonoBehaviour:
     - 'The trick is: I actually mean it.'
     - "Charisma isn\u2019t a performance \u2014 it\u2019s a frequency."
   - temperament: Dependable
-    aboutMeTexts: []
-    personalityTexts: []
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Dependable
     taglineTexts:
     - "I don\u2019t give up easily \u2014 or at all."
     - Dependability is my love language.
@@ -246,8 +252,10 @@ MonoBehaviour:
     - Safe is my favorite kind of love.
     - "Don\u2019t have to worry, nothing needs to."
   - temperament: Soft-spoken
-    aboutMeTexts: []
-    personalityTexts: []
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Soft-spoken
     taglineTexts:
     - I water my friends more than my plants.
     - I speak softly, but I mean deeply.
@@ -255,8 +263,10 @@ MonoBehaviour:
     - The tone says as much as the words.
     - Romance sounds best in quiet tones.
   - temperament: Compassionate
-    aboutMeTexts: []
-    personalityTexts: []
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Compassionate
     taglineTexts:
     - Empathy is my first instinct.
     - Being kind feels better than being right.
@@ -265,8 +275,10 @@ MonoBehaviour:
     - Tenderness is a strength I choose daily.
     - Kind hearts are still fierce.
   - temperament: Empathetic
-    aboutMeTexts: []
-    personalityTexts: []
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Empathetic
     taglineTexts:
     - Empathy is my first instinct.
     - Being kind feels better than being right.
@@ -275,8 +287,10 @@ MonoBehaviour:
     - Tenderness is a strength I choose daily.
     - Kind hearts are still fierce.
   - temperament: Caring
-    aboutMeTexts: []
-    personalityTexts: []
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Caring
     taglineTexts:
     - Empathy is my first instinct.
     - Being kind feels better than being right.
@@ -285,8 +299,10 @@ MonoBehaviour:
     - Tenderness is a strength I choose daily.
     - Kind hearts are still fierce.
   - temperament: Gentle
-    aboutMeTexts: []
-    personalityTexts: []
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Gentle
     taglineTexts:
     - Empathy is my first instinct.
     - Being kind feels better than being right.
@@ -295,8 +311,10 @@ MonoBehaviour:
     - Tenderness is a strength I choose daily.
     - Kind hearts are still fierce.
   - temperament: Supportive
-    aboutMeTexts: []
-    personalityTexts: []
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Supportive
     taglineTexts:
     - Empathy is my first instinct.
     - Being kind feels better than being right.
@@ -306,7 +324,8 @@ MonoBehaviour:
     - Kind hearts are still fierce.
   - temperament: Honest
     aboutMeTexts: []
-    personalityTexts: []
+    personalityTexts:
+    - Honest
     taglineTexts:
     - "I don\u2019t say things I don\u2019t mean."
     - Sincerity first, charm later.
@@ -315,7 +334,8 @@ MonoBehaviour:
     - Real over perfect, always.
   - temperament: Good listener
     aboutMeTexts: []
-    personalityTexts: []
+    personalityTexts:
+    - Good listener
     taglineTexts:
     - I listen with my heart, not just my ears.
     - "I\u2019m here for the long stories, not just the headlines."
@@ -324,7 +344,8 @@ MonoBehaviour:
     - I listen like it matters, because it does.
   - temperament: Genuine
     aboutMeTexts: []
-    personalityTexts: []
+    personalityTexts:
+    - Genuine
     taglineTexts:
     - "I don\u2019t say things I don\u2019t mean."
     - Sincerity first, charm later.
@@ -332,8 +353,10 @@ MonoBehaviour:
     - "Honesty feels like air \u2014 necessary and clear."
     - Real over perfect, always.
   - temperament: Extroverted
-    aboutMeTexts: []
-    personalityTexts: []
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Extroverted
     taglineTexts:
     - Too social to stay bored.
     - Making friends everywhere I go.
@@ -342,8 +365,10 @@ MonoBehaviour:
     - Wanna be friends?
     - "Can\u2019t sit still \u2014 life\u2019s too short for that."
   - temperament: Outgoing
-    aboutMeTexts: []
-    personalityTexts: []
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Outgoing
     taglineTexts:
     - Too social to stay bored.
     - Making friends everywhere I go.
@@ -352,8 +377,10 @@ MonoBehaviour:
     - Wanna be friends?
     - "Can\u2019t sit still \u2014 life\u2019s too short for that."
   - temperament: 'Fun-loving '
-    aboutMeTexts: []
-    personalityTexts: []
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - 'Fun-loving '
     taglineTexts:
     - "Catch me if you can \u2014 or don\u2019t, I like the chase."
     - "Life\u2019s better when you don\u2019t overthink the plan."
@@ -362,8 +389,10 @@ MonoBehaviour:
     - "Let\u2019s turn a walk into an adventure."
     - "Every day\u2019s a reason to smile."
   - temperament: Confident
-    aboutMeTexts: []
-    personalityTexts: []
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Confident
     taglineTexts:
     - I know who I am, and I like that person.
     - "I don\u2019t need to prove my worth \u2014 I live it."
@@ -372,8 +401,10 @@ MonoBehaviour:
     - Self-trust is my foundation.
     - "I don\u2019t need to be loud to be seen."
   - temperament: Lively
-    aboutMeTexts: []
-    personalityTexts: []
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Lively
     taglineTexts:
     - Too alive to sit still.
     - My vibe? Sparkling water with extra fizz.
@@ -381,8 +412,10 @@ MonoBehaviour:
     - My optimism has rhythm.
     - I live in color, not grayscale.
   - temperament: Cheerful
-    aboutMeTexts: []
-    personalityTexts: []
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Cheerful
     taglineTexts:
     - Good mood? Basically permanent.
     - "Good vibes and bad puns \u2014 a combo deal."
@@ -390,8 +423,10 @@ MonoBehaviour:
     - Cheerful souls find beauty anywhere.
     - "Happiness isn\u2019t luck \u2014 it\u2019s craft."
   - temperament: Optimistic
-    aboutMeTexts: []
-    personalityTexts: []
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Optimistic
     taglineTexts:
     - Good mood? Basically permanent.
     - "Good vibes and bad puns \u2014 a combo deal."
@@ -400,16 +435,20 @@ MonoBehaviour:
     - "Happiness isn\u2019t luck \u2014 it\u2019s craft."
     - Every day is a gift, so take your time!
   - temperament: Introverted
-    aboutMeTexts: []
-    personalityTexts: []
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Introverted
     taglineTexts:
     - A little shy, a lot sincere.
     - I smile more than I speak.
     - "I\u2019m better in text than in person \u2014 at first."
     - I like the corner of the room if you know what I mean.
   - temperament: Chill
-    aboutMeTexts: []
-    personalityTexts: []
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Chill
     taglineTexts:
     - "Catch me if you can \u2014 or don\u2019t, I like the chase."
     - "Life\u2019s better when you don\u2019t overthink the plan."
@@ -417,8 +456,10 @@ MonoBehaviour:
     - "Every day\u2019s a reason to smile."
     - Chill life!
   - temperament: Creative
-    aboutMeTexts: []
-    personalityTexts: []
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Creative
     taglineTexts:
     - 'Paint first, text later. '
     - 'Soft jazz, dim light, one glass of red. '
@@ -427,8 +468,10 @@ MonoBehaviour:
     - 'Complex flavor, simple heart. '
     - 'Looking for someone who loves moonlight. '
   - temperament: Dreamy
-    aboutMeTexts: []
-    personalityTexts: []
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Dreamy
     taglineTexts:
     - 'Paint first, text later. '
     - 'Soft jazz, dim light, one glass of red. '
@@ -437,8 +480,10 @@ MonoBehaviour:
     - 'Complex flavor, simple heart. '
     - 'Looking for someone who loves moonlight. '
   - temperament: Expressive
-    aboutMeTexts: []
-    personalityTexts: []
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Expressive
     taglineTexts:
     - 'Paint first, text later. '
     - 'Soft jazz, dim light, one glass of red. '
@@ -447,8 +492,10 @@ MonoBehaviour:
     - 'Complex flavor, simple heart. '
     - 'Looking for someone who loves moonlight. '
   - temperament: Poetic
-    aboutMeTexts: []
-    personalityTexts: []
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Poetic
     taglineTexts:
     - 'I write poetry I never post. '
     - Life is like a poetry you read until the end.
@@ -456,8 +503,10 @@ MonoBehaviour:
     - 'Soft jazz, dim light, one glass of red. '
     - What life can I read about myself?
   - temperament: Daydreamer
-    aboutMeTexts: []
-    personalityTexts: []
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Daydreamer
     taglineTexts:
     - My imagination is my favorite escape.
     - "Reality\u2019s nice, but I like adding sparkles."
@@ -466,8 +515,10 @@ MonoBehaviour:
     - I paint in daydreams first.
     - "I live like inspiration\u2019s always about to arrive."
   - temperament: Independent
-    aboutMeTexts: []
-    personalityTexts: []
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Independent
     taglineTexts:
     - I love company, not dependency.
     - I belong to myself first.
@@ -476,8 +527,10 @@ MonoBehaviour:
     - Unattached, but never uninvolved.
     - "Independence isn\u2019t cold \u2014 it\u2019s quiet strength."
   - temperament: Ambitious
-    aboutMeTexts: []
-    personalityTexts: []
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Ambitious
     taglineTexts:
     - "I\u2019m building something I can be proud of \u2014 myself."
     - I chase goals, not people.
@@ -486,16 +539,20 @@ MonoBehaviour:
     - Persistence over pressure.
     - Big dreamer, serious doer.
   - temperament: Mature
-    aboutMeTexts: []
-    personalityTexts: []
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Mature
     taglineTexts:
     - "I\u2019ve stopped trying to be impressive \u2014 I\u2019d rather be honest."
     - Wisdom looks quieter than I expected.
     - I like people who think before they talk.
     - "I don\u2019t want drama; I want depth."
   - temperament: Disciplined
-    aboutMeTexts: []
-    personalityTexts: []
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Disciplined
     taglineTexts:
     - Discipline is my love language to myself.
     - Discipline is quiet confidence.
@@ -503,8 +560,10 @@ MonoBehaviour:
     - "Dreaming is cute \u2014 doing is better."
     - My goals keep me grounded.
   - temperament: Funny
-    aboutMeTexts: []
-    personalityTexts: []
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Funny
     taglineTexts:
     - I laugh at my own jokes!
     - "I don\u2019t do pickup lines \u2014 I do callbacks."
