@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class Navigation : MonoBehaviour
 {
@@ -16,17 +17,25 @@ public class Navigation : MonoBehaviour
     public float maxTilt = 15f;
 
     private RectTransform panelRect;
-    private float screenWidth;
+    private Image panelImage;
 
+    private float screenWidth;
     private float appliedAngleZ = 0f;
     private float targetAngleZ = 0f;
-
     private bool isDragging = false;
     private Vector2 pressPos;
+
+    private Color baseColor = Color.white;
+    private Color rightColor = new Color(1f, 0.6f, 0.6f);
+    private Color leftColor = new Color(0.6f, 1f, 0.6f);
 
     void Start()
     {
         panelRect = profileUI.GetComponent<RectTransform>();
+        panelImage = panelRect.GetComponent<Image>();
+        if (panelImage != null)
+            baseColor = panelImage.color;
+
         screenWidth = Mathf.Max(1, Screen.width);
         GenerateNewProfile();
     }
@@ -46,6 +55,15 @@ public class Navigation : MonoBehaviour
         {
             float deltaX = (mouse.position.ReadValue().x - pressPos.x) / screenWidth;
             targetAngleZ = Mathf.Clamp(-deltaX * rotationMultiplier, -maxTilt, maxTilt);
+
+            if (panelImage != null)
+            {
+                float t = Mathf.Abs(targetAngleZ) / maxTilt;
+                if (targetAngleZ > 0)
+                    panelImage.color = Color.Lerp(baseColor, rightColor, t);
+                else
+                    panelImage.color = Color.Lerp(baseColor, leftColor, t);
+            }
         }
 
         if (mouse.leftButton.wasReleasedThisFrame && isDragging)
@@ -62,6 +80,9 @@ public class Navigation : MonoBehaviour
         if (!isDragging)
         {
             targetAngleZ = Mathf.MoveTowards(targetAngleZ, 0f, returnSpeed * Time.deltaTime);
+
+            if (panelImage != null)
+                panelImage.color = Color.Lerp(panelImage.color, baseColor, Time.deltaTime * returnSpeed);
         }
 
         float deltaAngle = targetAngleZ - appliedAngleZ;
@@ -80,16 +101,13 @@ public class Navigation : MonoBehaviour
             new Vector3((0.5f - pivot.x) * size.x, (0f - pivot.y) * size.y, 0f);
 
         Vector3 worldBottomCenter = panelRect.TransformPoint(localBottomCenter);
-
         panelRect.RotateAround(worldBottomCenter, Vector3.forward, deltaAngle);
     }
 
     public void GenerateNewProfile()
     {
         if (profileGenerator == null || randomFruit == null || profileUI == null)
-        {
             return;
-        }
 
         if (Mathf.Abs(appliedAngleZ) > 0.0001f)
         {
@@ -101,5 +119,8 @@ public class Navigation : MonoBehaviour
         var newProfile = profileGenerator.GenerateProfileData();
         profileUI.UpdateUI(newProfile);
         randomFruit.CombineRandom();
+
+        if (panelImage != null)
+            panelImage.color = baseColor;
     }
 }
