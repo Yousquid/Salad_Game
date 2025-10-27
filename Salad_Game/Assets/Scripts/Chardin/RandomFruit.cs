@@ -30,13 +30,13 @@ public class RandomFruit : MonoBehaviour
         CombineRandom();
     }
 
-    void Update()
+    /*void Update()
     {
         if (Keyboard.current.rightArrowKey.wasPressedThisFrame)
         {
             CombineRandom();
         }
-    }
+    }*/
 
 
     public void CombineRandom()
