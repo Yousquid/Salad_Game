@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Sirenix.OdinInspector;
+
 public class ProfileUI : MonoBehaviour
 {
     public ProfileDataGenerator profileDataGenerator;
@@ -20,13 +21,27 @@ public class ProfileUI : MonoBehaviour
     public Transform QuestionsParent;
     public RectTransform SuperLike;
     public Vector2 superLikeYRange;
+    public Vector2 superLikeLocalScaleRange;
+    public float superShowThresholdY = 0.5f;
 
     private void Update()
     {
-        Debug.Log(ScrollRect.verticalNormalizedPosition);
-        
-        //var y = ExtensionMethods.Map
-        //SuperLike.anchoredPosition = SuperLike.anchoredPosition.SetY()
+        // Debug.Log(ScrollRect.verticalNormalizedPosition);
+
+        if (ScrollRect.verticalNormalizedPosition < superShowThresholdY)
+        {
+            var y = ExtensionMethods.Map(ScrollRect.verticalNormalizedPosition, 0, superShowThresholdY,
+                superLikeYRange.y, superLikeYRange.x);
+            y = Mathf.Clamp(y, superLikeYRange.x, superLikeYRange.y);
+            var s = ExtensionMethods.Map(ScrollRect.verticalNormalizedPosition, 0, superShowThresholdY,
+                superLikeLocalScaleRange.y, superLikeLocalScaleRange.x);
+            SuperLike.anchoredPosition = SuperLike.anchoredPosition.SetY(y);
+            SuperLike.localScale = new Vector3(s, s, s);
+        }
+        else
+        {
+            SuperLike.anchoredPosition = SuperLike.anchoredPosition.SetY(superLikeYRange.x);
+        }
     }
 
     [Button]
@@ -34,6 +49,7 @@ public class ProfileUI : MonoBehaviour
     {
         UpdateUI(profileDataGenerator.GenerateProfileData());
     }
+
     public void UpdateUI(ProfileData profileData)
     {
         Name.text = profileData.Name;
@@ -46,9 +62,11 @@ public class ProfileUI : MonoBehaviour
         {
             Destroy(InterestsBubblesParent.GetChild(i).gameObject);
         }
+
         foreach (string interest in profileData.Interests)
         {
-            var bubbleText = Instantiate(InterestBubblePrefab, InterestsBubblesParent).GetComponentInChildren<TextMeshProUGUI>();
+            var bubbleText = Instantiate(InterestBubblePrefab, InterestsBubblesParent)
+                .GetComponentInChildren<TextMeshProUGUI>();
             bubbleText.text = interest;
         }
 
@@ -56,9 +74,11 @@ public class ProfileUI : MonoBehaviour
         {
             Destroy(MoreAboutMeBubblesParent.GetChild(i).gameObject);
         }
+
         foreach (string moreAboutMe in profileData.MoreAboutMe)
         {
-            var moreAboutMeBubbleText = Instantiate(MoreAboutMeBubblePrefab, MoreAboutMeBubblesParent).GetComponentInChildren<TextMeshProUGUI>();
+            var moreAboutMeBubbleText = Instantiate(MoreAboutMeBubblePrefab, MoreAboutMeBubblesParent)
+                .GetComponentInChildren<TextMeshProUGUI>();
             moreAboutMeBubbleText.text = moreAboutMe;
         }
 
@@ -66,6 +86,7 @@ public class ProfileUI : MonoBehaviour
         {
             Destroy(QuestionsParent.GetChild(i).gameObject);
         }
+
         foreach (QAData question in profileData.QAs)
         {
             var questionObject = Instantiate(QuestionPrefab, QuestionsParent).GetComponent<TextMeshProUGUI>();

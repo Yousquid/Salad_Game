@@ -226,4 +226,12 @@ public static class ExtensionMethods {
 	}
 
 	#endregion
+	
+	public static float Map(float value, float inMin, float inMax, float outMin, float outMax)
+	{
+		if (Mathf.Approximately(inMax, inMin))
+			return outMin;
+
+		return (value - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
+	}
 }
