@@ -15,8 +15,8 @@ public class ProfileDataGenerator : MonoBehaviour
     public Vector2Int ageAmtRange;
     [Range(0, 1)] public float verifiedRate;
     public Vector2Int personalitiesAmtRange;
-    public Vector2Int tagsAmtRange;
-    public TagsDatabaseSO tagsDatabase;
+    [HideInInspector] public Vector2Int tagsAmtRange;
+    [HideInInspector] public TagsDatabaseSO tagsDatabase;
     public Vector2Int interestsAmtRange;
     public InterestsDatabaseSO interestsDatabase;
     public Vector2Int qaAmtRange;
@@ -111,8 +111,8 @@ public class ProfileDataGenerator : MonoBehaviour
     }
     private string[] GetMoreAboutMe(TemperamentDataBase[] dataBases)
     {
-        var tags = GetFromDatabase(tagsAmtRange, tagsDatabase.tags);
-        
+        //var tags = GetFromDatabase(tagsAmtRange, tagsDatabase.tags);
+        var tags = Array.Empty<string>();
         var personalitiesDatabase = new List<string>();
         for (int i = 0; i < dataBases.Length; i++)
         {
