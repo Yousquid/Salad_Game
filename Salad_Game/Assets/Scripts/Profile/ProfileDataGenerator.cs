@@ -7,6 +7,7 @@ using UnityEngine.UIElements;
 
 public class ProfileDataGenerator : MonoBehaviour
 {
+    public Vector2Int temperamentAmtRange;
     public NameDatabaseSO nameDatabase;
     public TemperamentDatabaseSO temperamentDatabase;
     public Vector2Int ageAmtRange;
@@ -18,7 +19,14 @@ public class ProfileDataGenerator : MonoBehaviour
     public InterestsDatabaseSO interestsDatabase;
     public Vector2Int qaAmtRange;
     public QADatabaseSO qaDatabase;
-    
+
+    public ProfileData GenerateProfileData()
+    {
+        string[] temperaments = new string[Random.Range(temperamentAmtRange.x, temperamentAmtRange.y + 1)];
+        temperaments = GetFromDatabase(temperamentAmtRange, temperamentDatabase.temperamentsDatabases).Select(x => x.temperament).ToArray();
+        Debug.Log(temperaments);
+        return GenerateProfileData(temperaments);
+    }
     public ProfileData GenerateProfileData(string[] temperaments)
     {
         var dataBases = new TemperamentDataBase[temperaments.Length];
