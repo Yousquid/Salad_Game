@@ -27,7 +27,9 @@ public class ProfileUI : MonoBehaviour
     public float superShowThresholdYMin = 0.2f;
     public float superLikeMaxScale = 1.8f;
 
-    [Header("Like & Nope")] public RectTransform Like;
+    [Header("Like & Nope")] 
+    public float offsetY;
+    public RectTransform Like;
     public Vector2 likeRangeX;
     public Vector2 likeRangeScale;
     public Vector2 likeRotationMapZ;
@@ -86,6 +88,7 @@ public class ProfileUI : MonoBehaviour
             var s = ExtensionMethods.Map(rotationZ, likeRotationMapZ.x, likeRotationMapZ.y,
                 likeRangeScale.x, likeRangeScale.y);
             Like.localScale = new Vector3(s, s, s);
+            Like.anchoredPosition = Like.anchoredPosition.SetY(offsetY);
         }
         
         if (Nope != null)
@@ -103,6 +106,7 @@ public class ProfileUI : MonoBehaviour
             var s = ExtensionMethods.Map(rotationZ, nopeRotationMapZ.x, nopeRotationMapZ.y,
                 likeRangeScale.x, likeRangeScale.y);
             Nope.localScale = new Vector3(s, s, s);
+            Nope.anchoredPosition = Nope.anchoredPosition.SetY(offsetY);       
         }
     }
 
