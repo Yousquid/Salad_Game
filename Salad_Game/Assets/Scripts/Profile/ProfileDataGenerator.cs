@@ -1,9 +1,11 @@
+using System;
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Linq;
 using Unity.Collections;
 using UnityEngine;
 using UnityEngine.UIElements;
+using Random = UnityEngine.Random;
 
 public class ProfileDataGenerator : MonoBehaviour
 {
@@ -57,10 +59,14 @@ public class ProfileDataGenerator : MonoBehaviour
     private string GetAboutMe(TemperamentDataBase[] dataBases)
     {
         var aboutMes = new List<string>();
-        Debug.Log(dataBases.Length);
         for (int i = 0; i < dataBases.Length; i++)
         {
             aboutMes = aboutMes.Concat(dataBases[i].aboutMeTexts).ToList();
+        }
+
+        if (aboutMes.Count == 0)
+        {
+            return null;
         }
         return aboutMes[Random.Range(0, aboutMes.Count)];
     }
@@ -69,6 +75,10 @@ public class ProfileDataGenerator : MonoBehaviour
 
     private T[] GetFromDatabase<T>(Vector2Int amountRange, T[] database)
     {
+        if (database.Length == 0)
+        {
+            return Array.Empty<T>();
+        }
         var results = new T[Random.Range(amountRange.x, amountRange.y + 1)];
         _maxTriesCounter = 0;
         for (int i = 0; i < results.Length; i++)
@@ -93,7 +103,6 @@ public class ProfileDataGenerator : MonoBehaviour
     private string GetTagLine(TemperamentDataBase[] dataBases)
     {
         var tagLines = new List<string>();
-        Debug.Log(dataBases.Length);
         for (int i = 0; i < dataBases.Length; i++)
         {
             tagLines = tagLines.Concat(dataBases[i].taglineTexts).ToList();
