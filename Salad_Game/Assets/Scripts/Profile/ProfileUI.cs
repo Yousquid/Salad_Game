@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -5,6 +6,7 @@ using Sirenix.OdinInspector;
 public class ProfileUI : MonoBehaviour
 {
     public ProfileDataGenerator profileDataGenerator;
+    public ScrollRect ScrollRect;
     public TMP_Text Name;
     public TMP_Text Age;
     public Image VerifiedIcon;
@@ -16,7 +18,17 @@ public class ProfileUI : MonoBehaviour
     public Transform MoreAboutMeBubblesParent;
     public GameObject QuestionPrefab;
     public Transform QuestionsParent;
-    
+    public RectTransform SuperLike;
+    public Vector2 superLikeYRange;
+
+    private void Update()
+    {
+        Debug.Log(ScrollRect.verticalNormalizedPosition);
+        
+        //var y = ExtensionMethods.Map
+        //SuperLike.anchoredPosition = SuperLike.anchoredPosition.SetY()
+    }
+
     [Button]
     public void TestUpdateUI()
     {

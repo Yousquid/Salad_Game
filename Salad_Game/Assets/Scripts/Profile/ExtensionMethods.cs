@@ -175,8 +175,24 @@ public static class ExtensionMethods {
 
 	#endregion
 
-	#region vector3 methods
+	#region vector methods
 
+	public static Vector3 SetX(this Vector3 vector, float x)
+	{
+		vector.x = x;
+		return vector;
+	}
+	public static Vector3 SetY(this Vector3 vector, float y)
+	{
+		vector.y = y;
+		return vector;
+	}
+
+	public static Vector3 SetZ(this Vector3 vector, float z)
+	{
+		vector.z = z;
+		return vector;
+	}
 	public static Vector3 UnitDirectionVector(this Vector3 vector, float degrees){
 		vector.x = Mathf.Cos(degrees * Mathf.Deg2Rad);
 		vector.y = Mathf.Sin (degrees * Mathf.Deg2Rad);
@@ -186,7 +202,16 @@ public static class ExtensionMethods {
 	{
 		return new Vector3(v.x, v.y, z);
 	}
-
+	public static Vector2 SetX(this Vector2 vector, float x)
+	{
+		vector.x = x;
+		return vector;
+	}
+	public static Vector2 SetY(this Vector2 vector, float y)
+	{
+		vector.y = y;
+		return vector;
+	}
 	public static Vector2 ToVector2(this Vector3 v)
 	{
 		return new Vector2(v.x, v.y);

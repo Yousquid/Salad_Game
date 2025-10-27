@@ -79,7 +79,10 @@ public class ProfileDataGenerator : MonoBehaviour
         {
             return Array.Empty<T>();
         }
-        var results = new T[Random.Range(amountRange.x, amountRange.y + 1)];
+        var limit = database.Length;
+        var rLength = Random.Range(amountRange.x, amountRange.y + 1);
+        rLength = Mathf.Min(rLength, limit);
+        var results = new T[rLength];
         _maxTriesCounter = 0;
         for (int i = 0; i < results.Length; i++)
         {
