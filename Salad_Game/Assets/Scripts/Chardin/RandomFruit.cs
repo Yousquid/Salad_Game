@@ -57,8 +57,8 @@ public class RandomFruit : MonoBehaviour
         GameObject objB = Instantiate(b, spawnPoint.position, Quaternion.identity, currentCombined.transform);
         GameObject objC = Instantiate(c, spawnPoint.position, Quaternion.identity, currentCombined.transform);
 
-        objA.transform.localPosition = new Vector3(0, 1f, 0);
+        objA.transform.localPosition = new Vector3(0, 0, 0);
         objB.transform.localPosition = new Vector3(0, 0, 0);
-        objC.transform.localPosition = new Vector3(0, -1f, 0);
+        objC.transform.localPosition = new Vector3(0, 0, 0);
     }
 }
