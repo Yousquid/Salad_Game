@@ -16,6 +16,16 @@ public class Navigation : MonoBehaviour
     public float returnSpeed = 10f;
     public float maxTilt = 15f;
 
+    [Header("Camera Settings")]
+    public Camera mainCamera;
+    public float cameraDistance = 5f;
+    public float horizontalAngleRange = 10f;
+    public float verticalAngleRange = 6f;
+    public float cameraMoveSpeed = 3f;
+
+    private Vector3 targetCamPos;
+    private Quaternion targetCamRot;
+
     private RectTransform panelRect;
     private Image panelImage;
 
@@ -37,6 +47,10 @@ public class Navigation : MonoBehaviour
             baseColor = panelImage.color;
 
         screenWidth = Mathf.Max(1, Screen.width);
+
+        if (mainCamera == null)
+            mainCamera = Camera.main;
+
         GenerateNewProfile();
     }
 
@@ -80,7 +94,6 @@ public class Navigation : MonoBehaviour
         if (!isDragging)
         {
             targetAngleZ = Mathf.MoveTowards(targetAngleZ, 0f, returnSpeed * Time.deltaTime);
-
             if (panelImage != null)
                 panelImage.color = Color.Lerp(panelImage.color, baseColor, Time.deltaTime * returnSpeed);
         }
@@ -90,6 +103,12 @@ public class Navigation : MonoBehaviour
         {
             RotateAroundBottomCenter(deltaAngle);
             appliedAngleZ += deltaAngle;
+        }
+
+        if (mainCamera != null)
+        {
+            mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, targetCamPos, Time.deltaTime * cameraMoveSpeed);
+            mainCamera.transform.rotation = Quaternion.Slerp(mainCamera.transform.rotation, targetCamRot, Time.deltaTime * cameraMoveSpeed);
         }
     }
 
@@ -122,5 +141,22 @@ public class Navigation : MonoBehaviour
 
         if (panelImage != null)
             panelImage.color = baseColor;
+
+        UpdateCameraTarget();
+    }
+
+    private void UpdateCameraTarget()
+    {
+        if (mainCamera == null || randomFruit == null) return;
+
+        Vector3 fruitPos = randomFruit.transform.position;
+
+        float yaw = Random.Range(-horizontalAngleRange, horizontalAngleRange);
+        float pitch = Random.Range(-verticalAngleRange, verticalAngleRange);
+
+        Quaternion randomRot = Quaternion.Euler(pitch, yaw, 0f);
+
+        targetCamPos = fruitPos + randomRot * (Vector3.back * cameraDistance);
+        targetCamRot = Quaternion.LookRotation(fruitPos - targetCamPos, Vector3.up);
     }
 }

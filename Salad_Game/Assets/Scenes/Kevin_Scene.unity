@@ -519,7 +519,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3099228360141809933, guid: d33a18852cbdd414ea22ea3732bcbf07, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -308.50357
+      value: -308.50012
       objectReference: {fileID: 0}
     - target: {fileID: 3358626042149799314, guid: d33a18852cbdd414ea22ea3732bcbf07, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1123,6 +1123,11 @@ MonoBehaviour:
   rotationMultiplier: 10
   returnSpeed: 10
   maxTilt: 15
+  mainCamera: {fileID: 0}
+  cameraDistance: 5
+  horizontalAngleRange: 30
+  verticalAngleRange: 30
+  cameraMoveSpeed: 3
 --- !u!222 &1757136674
 CanvasRenderer:
   m_ObjectHideFlags: 0
