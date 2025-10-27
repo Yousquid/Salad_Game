@@ -6,6 +6,7 @@ public class Navigation : MonoBehaviour
     [Header("Profile System")]
     public ProfileUI profileUI;
     public ProfileDataGenerator profileGenerator;
+    public RandomFruit randomFruit;
 
     [Header("Mouse Swipe Settings")]
     [Range(0.05f, 0.5f)]
@@ -85,7 +86,7 @@ public class Navigation : MonoBehaviour
 
     public void GenerateNewProfile()
     {
-        if (profileGenerator == null || profileUI == null)
+        if (profileGenerator == null || randomFruit == null || profileUI == null)
         {
             return;
         }
@@ -99,5 +100,6 @@ public class Navigation : MonoBehaviour
 
         var newProfile = profileGenerator.GenerateProfileData();
         profileUI.UpdateUI(newProfile);
+        randomFruit.CombineRandom();
     }
 }

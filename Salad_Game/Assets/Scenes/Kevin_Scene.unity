@@ -511,15 +511,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2823621688790460972, guid: d33a18852cbdd414ea22ea3732bcbf07, type: 3}
       propertyPath: m_Size
-      value: 0.383
+      value: 0.35695812
       objectReference: {fileID: 0}
     - target: {fileID: 2823621688790460972, guid: d33a18852cbdd414ea22ea3732bcbf07, type: 3}
       propertyPath: m_Value
-      value: 1.8134081
+      value: 1.0239677
       objectReference: {fileID: 0}
     - target: {fileID: 3099228360141809933, guid: d33a18852cbdd414ea22ea3732bcbf07, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -308.5
+      value: -308.50098
       objectReference: {fileID: 0}
     - target: {fileID: 3358626042149799314, guid: d33a18852cbdd414ea22ea3732bcbf07, type: 3}
       propertyPath: m_AnchorMax.y
@@ -781,6 +781,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7576498268401384121, guid: d33a18852cbdd414ea22ea3732bcbf07, type: 3}
+      propertyPath: m_Color.a
+      value: 0.039215688
+      objectReference: {fileID: 0}
     - target: {fileID: 8261256738989201949, guid: d33a18852cbdd414ea22ea3732bcbf07, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1009,6 +1013,60 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1689853190
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1689853192}
+  - component: {fileID: 1689853191}
+  m_Layer: 0
+  m_Name: FruitGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1689853191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1689853190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 074403811a9b8184fb0d366541526202, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RandomFruit
+  partListA:
+  - {fileID: 4272344721902755694, guid: 8abe81f3fe42ccc4cac67d1628411ce3, type: 3}
+  - {fileID: 5836000535716853492, guid: b7c9ad35180cc8d488ea68fe566975f0, type: 3}
+  partListB:
+  - {fileID: 7597762838285148673, guid: 4256ef79d7746f54e81fc6a12b57be74, type: 3}
+  - {fileID: 3013840861615642128, guid: 8aa4cd026b0ffd249b525d23133c236c, type: 3}
+  partListC:
+  - {fileID: 5540313104636932080, guid: 16dcc689a8ab9ca42a1e4adb5c9ba11a, type: 3}
+  - {fileID: 96630605678670725, guid: 7e989431a405db34fb6127855b78766d, type: 3}
+  spawnPoint: {fileID: 1689853192}
+--- !u!4 &1689853192
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1689853190}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.5, z: -6.53507}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1757136670
 GameObject:
   m_ObjectHideFlags: 0
@@ -1218,3 +1276,4 @@ SceneRoots:
   - {fileID: 1677767793}
   - {fileID: 127875080}
   - {fileID: 574018365}
+  - {fileID: 1689853192}
