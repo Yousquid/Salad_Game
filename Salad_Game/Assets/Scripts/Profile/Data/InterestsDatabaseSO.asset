@@ -13,6 +13,101 @@ MonoBehaviour:
   m_Name: InterestsDatabaseSO
   m_EditorClassIdentifier: Assembly-CSharp::InterestsDatabaseSO
   interests:
-  - football
-  - cricket
-  - 34343
+  - Live music
+  - Concerts
+  - Singing
+  - Guitar
+  - Piano
+  - Jazz
+  - Classical
+  - Vinyl collecting
+  - Songwriting
+  - DJing
+  - Museums
+  - Painting
+  - Photography
+  - Video Games
+  - Film
+  - Drawing
+  - 'Theater '
+  - Poetry
+  - Animation
+  - Tattoos
+  - 'Coffee '
+  - Tea
+  - Wine
+  - Beer
+  - Cooking
+  - Baking
+  - Trying new restaurants
+  - Food festivals
+  - 'Cocktail mixing '
+  - Asian cuisine
+  - 'Italian food '
+  - Sushi
+  - Traveling
+  - Road trips
+  - Backpacking
+  - Hiking
+  - Camping
+  - 'Beach days '
+  - Swimming
+  - Surfing
+  - Skiing
+  - Diving
+  - City exploring
+  - Nature walks
+  - Stargazing
+  - Watching sunsets
+  - Biking
+  - Solo travel
+  - Movies
+  - 'Netflix '
+  - Anime
+  - Board games
+  - Podcasts
+  - Valorant
+  - League of Legends
+  - Stand-up comedy
+  - Esports
+  - Streaming
+  - Pop culture
+  - Cosplay
+  - K-dramas
+  - 'Marvel '
+  - DC
+  - Horror films
+  - Sci-fi
+  - Reading fiction
+  - Documentaries
+  - Gym
+  - Running
+  - Yoga
+  - Pilates
+  - Dancing
+  - Martial arts
+  - Boxing
+  - Rock climbing
+  - Basketball
+  - 'Soccer '
+  - Football
+  - Tennis
+  - Skateboarding
+  - Swimming
+  - Hiking
+  - Cycling
+  - Meditation
+  - Reading
+  - Journaling
+  - Gardening
+  - Shopping
+  - Fashion
+  - DIY crafts
+  - Interior design
+  - Learning
+  - Volunteering
+  - Pets
+  - 'Cat '
+  - Dog
+  - Astrology
+  - Tarot
