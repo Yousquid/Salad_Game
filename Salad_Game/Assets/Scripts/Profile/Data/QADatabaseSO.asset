@@ -1,0 +1,185 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a6c68b07795a41cbb213fceb059addf, type: 3}
+  m_Name: QADatabaseSO
+  m_EditorClassIdentifier: Assembly-CSharp::QADatabaseSO
+  QaDatas:
+  - question: What do you do when you're by yourself?
+    answer: Play video games.
+  - question: What do you do when you're by yourself?
+    answer: Watch a horro movie.
+  - question: What do you do when you're by yourself?
+    answer: Sleep.
+  - question: What is a place I would travel to?
+    answer: Japan. For the food, the trains, and the calm.
+  - question: Dream destination?
+    answer: "Iceland \u2014 I want to see what silence looks like."
+  - question: 'Next trip on my list:'
+    answer: 'Greece. For the sea, the stories, and the olives. '
+  - question: "Where you\u2019ll find me on vacation:"
+    answer: Somewhere warm with bed and Wi-Fi.
+  - question: 'My comfort food:'
+    answer: 'Anything with noodles. Or just noodles. '
+  - question: 'Best meal I ever had:'
+    answer: Breakfast at 2 a.m. with friends.
+  - question: 'Favorite drink:'
+    answer: Coffee.
+  - question: 'Favorite drink:'
+    answer: Wine.
+  - question: 'Favorite drink:'
+    answer: Whisky.
+  - question: 'Favorite drink:'
+    answer: Beer.
+  - question: 'Favorite drink:'
+    answer: Cola.
+  - question: 'My comfort food:'
+    answer: Chicken!
+  - question: 'My comfort food:'
+    answer: Salad!
+  - question: 'What I cook best: '
+    answer: Tomatoes and eggs!
+  - question: Pineapple on pizza?
+    answer: OK >_<
+  - question: 'My go-to karaoke song: '
+    answer: Dead Man.
+  - question: 'Favorite lyric:'
+    answer: "\u201CI\u2019m a dead man.\u201D"
+  - question: 'Favorite Singer:'
+    answer: Kun
+  - question: 'Two truths and a lie:'
+    answer: I love mornings, I hate mornings, I am a morning.
+  - question: 'Unpopular opinion:'
+    answer: Cereal is bad for everyone!
+  - question: 'A fact about me that surprises people: '
+    answer: I actually enjoy playing valorant.
+  - question: 'A fact about me that surprises people: '
+    answer: I always sleep before 10:30 pm.
+  - question: 'Unpopular opinion:'
+    answer: NYU is bad!
+  - question: 'Unpopular opinion:'
+    answer: NYU Game Center is so bad!
+  - question: 'A fact about me that surprises people: '
+    answer: I never ever drank any cola before!
+  - question: 'A fact about me that surprises people: '
+    answer: I have a cat but I am a dog fan.
+  - question: 'A fact about me that surprises people: '
+    answer: I have a dog but I am a cat fan.
+  - question: 'Unpopular opinion:'
+    answer: Kun is a bad singer.
+  - question: 'A fact about me that surprises people: '
+    answer: I am a fan of Kun!
+  - question: 'Ideal first date: '
+    answer: Something simple enough that we actually talk.
+  - question: 'If love was a season:'
+    answer: Autumn. Haha.
+  - question: 'If love was a season:'
+    answer: It cannot be winter, right?
+  - question: 'If love was a season:'
+    answer: It's like spring, everthing is going to grow better!
+  - question: 'If love was a season:'
+    answer: Hot like summer!
+  - question: 'What peace looks like to me:'
+    answer: A clean kitchen and someone humming nearby.
+  - question: 'How I usually spend my weekends:'
+    answer: Trying to do nothing and still on bed.
+  - question: 'How I usually spend my weekends:'
+    answer: Usually hiking, biking, or anything outside.
+  - question: 'Favorite Game:'
+    answer: Poker!
+  - question: 'Favorite Game:'
+    answer: Valorant.
+  - question: 'Favorite Game:'
+    answer: Counter-Strike.
+  - question: 'Favorite Game:'
+    answer: Dark Souls.
+  - question: 'Favorite Game:'
+    answer: Terria.
+  - question: 'My friends describe me as:'
+    answer: A mix of calm energy and chaotic playlists.
+  - question: 'My friends describe me as:'
+    answer: A good person.
+  - question: 'My friends describe me as:'
+    answer: A monstor!
+  - question: 'My friends describe me as:'
+    answer: A doll.
+  - question: 'My secret talent:'
+    answer: Sleep well.
+  - question: 'My secret talent:'
+    answer: Good memory.
+  - question: 'My secret talent:'
+    answer: A good listener.
+  - question: 'My secret talent:'
+    answer: Fast reader.
+  - question: 'What I want most in a partner:'
+    answer: Someone gentle enough to make calm feel exciting.
+  - question: 'What I want most in a partner:'
+    answer: Hoesty.
+  - question: 'What I want most in a partner:'
+    answer: Long company.
+  - question: 'What I want most in a partner:'
+    answer: Fresh feelings!
+  - question: 'Best smell in the world:'
+    answer: 'Fresh bread. '
+  - question: 'Best smell in the world:'
+    answer: Raw meat.
+  - question: 'Best smell in the world:'
+    answer: New sheets.
+  - question: 'Favorite Animation:'
+    answer: Neon Genesis Evangelion.
+  - question: 'Favorite Animation:'
+    answer: Dragon Ball!
+  - question: 'Favorite Animation:'
+    answer: NARUTO.
+  - question: 'My toxic trait:'
+    answer: I overthink texts but never send them.
+  - question: 'My toxic trait:'
+    answer: I think too much.
+  - question: 'My toxic trait:'
+    answer: I want love but I also fear love.
+  - question: 'My toxic trait:'
+    answer: Always sleep late.
+  - question: 'The most chaotic thing about me:'
+    answer: "I rearrange furniture when I\u2019m sad."
+  - question: 'The most chaotic thing about me:'
+    answer: I eat a lot when I'm sad.
+  - question: 'Something I do every day without fail:'
+    answer: Eat dinner.
+  - question: 'Something I do every day without fail:'
+    answer: Sleep.
+  - question: 'Something I do every day without fail:'
+    answer: Having fun.
+  - question: 'Something I do every day without fail:'
+    answer: Tell a joke!
+  - question: 'My comfort object:'
+    answer: A mug that fits both hands perfectly.
+  - question: 'My favorite weather:'
+    answer: Cloudy
+  - question: 'My favorite weather:'
+    answer: Sunny!
+  - question: 'My favorite weather:'
+    answer: Rainny.
+  - question: 'My favorite weather:'
+    answer: Windy.
+  - question: 'What I do when it rains: '
+    answer: Open the window a little and let the air in.
+  - question: 'What I do when it rains: '
+    answer: Have a good sleep.
+  - question: 'What I do when it rains: '
+    answer: Play video games!
+  - question: 'Favorite food:'
+    answer: Chinese food?
+  - question: 'Favorite food:'
+    answer: Salad!
+  - question: 'Favorite food:'
+    answer: Pizza
+  - question: 'How I usually spend my weekends:'
+    answer: Stay up late and wake up late.

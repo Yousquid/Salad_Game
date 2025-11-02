@@ -1,0 +1,571 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec3424e4674d347beae9e68f384c4772, type: 3}
+  m_Name: TemperamentDatabaseSO
+  m_EditorClassIdentifier: Assembly-CSharp::TemperamentDatabaseSO
+  temperamentsDatabases:
+  - temperament: Warm
+    aboutMeTexts:
+    - jkdshalfhjasdhjf
+    personalityTexts:
+    - Warm
+    taglineTexts:
+    - "Sun-grown and soil-fed. I\u2019m just looking for someone who loves quiet
+      mornings."
+    - I bruise easily but bounce back fast.
+    - Simple, honest, and best when fresh.
+    - "I\u2019m all about slow growth and genuine warmth."
+    - Soft on the inside, crisp on the outside.
+    - I water my friends more than my plants.
+    - I say what I mean, and I mean it kindly.
+    - "I give warmth like it\u2019s endless."
+  - temperament: 'Sincere '
+    aboutMeTexts:
+    - sadfewqerqwfdasf
+    personalityTexts:
+    - 'Sincere '
+    taglineTexts:
+    - Too honest for small talk.
+    - Real over perfect, always.
+    - I say what I mean, and I mean it kindly.
+    - No games, just real conversations.
+    - Here for genuine things and gentle people.
+    - Trying my best to love people right.
+    - Simple, honest, and a little sentimental.
+    - I overthink because I care.
+  - temperament: Patient
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Patient
+    taglineTexts:
+    - "Good things take time \u2014 and I don\u2019t mind waiting."
+    - I move slowly, but with purpose.
+    - "Patience isn\u2019t passive \u2014 it\u2019s care in slow motion."
+    - Quietly reliable, endlessly patient.
+    - Love me at the pace of growth.
+    - I listen more than I reply.
+    - Built for long pauses and steady light.
+    - I bloom in slow seasons.
+  - temperament: Flirty
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Flirty
+    taglineTexts:
+    - 'ME? Sweet, juicy, and maybe a little dramatic. '
+    - "I\u2019m technically a vegetable, or a fruit? But let\u2019s not make it weird."
+    - 'Looking for someone who can handle a little sauce. '
+    - 'Warning: may stain your heart (and your shirt). '
+    - Playful, not player.
+    - "I\u2019m not hard to get \u2014 you just have to mean it."
+    - "I don\u2019t do mixed signals \u2014 I do magnetic ones."
+    - Not toxic, just a little spicy.
+    - "Let\u2019s skip the small talk and find the spark."
+  - temperament: Passionate
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Passionate
+    taglineTexts:
+    - "I don\u2019t do halfway \u2014 not in life, not in love."
+    - "If I care, you\u2019ll feel it."
+    - All in, always.
+    - "Love isn\u2019t a risk; indifference is."
+    - "I give warmth like it\u2019s endless."
+    - "Feelings first, logic later \u2014 it\u2019s worked so far."
+    - "I\u2019m made of curiosity and caffeine."
+    - "I\u2019m made of fire and empathy."
+  - temperament: 'Energetic '
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - 'Energetic '
+    taglineTexts:
+    - "Always laughing at my own jokes \u2014 someone has to."
+    - Everything feels like an adventure if you let it.
+    - I get excited about clouds. Yes, clouds.
+    - "Life\u2019s short, so I talk fast."
+    - The human form of Friday night energy.
+    - "You\u2019ll find me where the music\u2019s playing."
+    - Happy days, happy life!
+    - Cheer up everyday!
+  - temperament: Thoughtful
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Thoughtful
+    taglineTexts:
+    - Peace is something I practice, not wait for.
+    - "I feel things deeply, and I\u2019m okay with that."
+    - Emotionally fluent, socially curious.
+    - "You don\u2019t have to say much \u2014 I\u2019ll probably understand."
+    - Still learning to think less, but never to feel less.
+    - The quietest moments say the most.
+  - temperament: Sensitive
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Sensitive
+    taglineTexts:
+    - "Layers upon layers \u2014 peel at your own risk."
+    - I care deeply, quietly, and sometimes clumsily.
+    - "My emotions don\u2019t whisper \u2014 they hum."
+    - Sometimes I break, but never in silence.
+    - "I\u2019d rather feel too much than nothing at all."
+    - "My emotions write stories my hands can\u2019t keep up with."
+    - The more I feel, the more I understand.
+    - Every word means something.
+  - temperament: Shy
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Shy
+    taglineTexts:
+    - A little shy, a lot sincere.
+    - I smile more than I speak.
+    - "I\u2019m better in text than in person \u2014 at first."
+    - Please laugh at my nervous jokes.
+    - I like the corner of the room if you know what I mean.
+  - temperament: Emotional
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Emotional
+    taglineTexts:
+    - "If I care, you\u2019ll feel it."
+    - "Layers upon layers \u2014 peel at your own risk."
+    - Tender-hearted, a little intense, and always real.
+    - "I\u2019m not for everyone, but I\u2019m honest about it."
+    - Sometimes I overthink, sometimes I overpeel.
+    - "Feelings first, logic later \u2014 it\u2019s worked so far."
+  - temperament: Romantic
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Romantic
+    taglineTexts:
+    - I believe every glance has a story.
+    - "Some people fall asleep to rain \u2014 I fall asleep to memories."
+    - Romance is just kindness with timing.
+    - I still believe in love that grows, not fades.
+    - "I love in metaphors \u2014 slowly, deeply, endlessly."
+    - My heart speaks fluent poetry.
+    - I write people into my stories before they know it.
+    - Looking for someone who still believes in quiet magic.
+  - temperament: Nostalgic
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Nostalgic
+    taglineTexts:
+    - I remember feelings more than events.
+    - "Some memories stay, even when people don\u2019t."
+    - I like 2000-year-musics.
+    - I love slow mornings, analog cameras, and letters with messy handwriting.
+    - Give me a dusty bookstore over a shiny mall any day.
+    - I believe memories are just soft time travel.
+    - "Some days feel like d\xE9j\xE0 vu in the nicest way."
+    - Time passes, but I collect the echoes.
+  - temperament: Peaceful
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Peaceful
+    taglineTexts:
+    - "I like peace, soft rain, and people who don\u2019t shout. "
+    - Fresh mind, clean heart.
+    - If you like quiet company, stay awhile.
+    - "I\u2019m not boring \u2014 I\u2019m balanced. "
+    - "Peace isn\u2019t my mood \u2014 it\u2019s my priority."
+    - I find joy in ordinary quiet.
+    - Peace, not perfection.
+    - I find peace between breaths.
+  - temperament: Kind
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Kind
+    taglineTexts:
+    - "I care, sometimes too much \u2014 but I\u2019d rather that than not enough."
+    - I water my friends more than my plants.
+    - I say what I mean, and I mean it kindly.
+    - Kindness is my favorite language.
+    - Every kind gesture is a memory in progress.
+  - temperament: Quiet
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Quiet
+    taglineTexts:
+    - I listen first, speak later.
+    - Still water, deep thoughts.
+    - Quiet time is how I recharge.
+    - "I\u2019d rather stay in than stand out."
+    - Just give me a little quiet time.
+    - Quiet strength, warm intentions.
+    - I find peace between breaths.
+  - temperament: Daring
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Daring
+    taglineTexts:
+    - "I don\u2019t wait for chances \u2014 I make them."
+    - "I\u2019m not afraid of falling, only of standing still."
+    - Spontaneity is my superpower.
+    - "Catch me if you can \u2014 or don\u2019t, I like the chase."
+    - Bravery looks better with a smile.
+    - Confidence is quiet; courage is louder.
+    - "My favorite kind of challenge is the one I wasn\u2019t ready for."
+    - Comfort zones are for naps.
+  - temperament: Charismatic
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Charismatic
+    taglineTexts:
+    - I flirt with life, not just people.
+    - I collect people, not followers.
+    - "I don\u2019t chase \u2014 I draw."
+    - Flirtation is just emotional jazz.
+    - 'The trick is: I actually mean it.'
+    - "Charisma isn\u2019t a performance \u2014 it\u2019s a frequency."
+  - temperament: Dependable
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Dependable
+    taglineTexts:
+    - "I don\u2019t give up easily \u2014 or at all."
+    - Dependability is my love language.
+    - "I\u2019d rather be reliable than remarkable."
+    - Safe is my favorite kind of love.
+    - "Don\u2019t have to worry, nothing needs to."
+  - temperament: Soft-spoken
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Soft-spoken
+    taglineTexts:
+    - I water my friends more than my plants.
+    - I speak softly, but I mean deeply.
+    - Composure is my second language.
+    - The tone says as much as the words.
+    - Romance sounds best in quiet tones.
+  - temperament: Compassionate
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Compassionate
+    taglineTexts:
+    - Empathy is my first instinct.
+    - Being kind feels better than being right.
+    - Compassion is my calm.
+    - Understanding people is how I love them.
+    - Tenderness is a strength I choose daily.
+    - Kind hearts are still fierce.
+  - temperament: Empathetic
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Empathetic
+    taglineTexts:
+    - Empathy is my first instinct.
+    - Being kind feels better than being right.
+    - Compassion is my calm.
+    - Understanding people is how I love them.
+    - Tenderness is a strength I choose daily.
+    - Kind hearts are still fierce.
+  - temperament: Caring
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Caring
+    taglineTexts:
+    - Empathy is my first instinct.
+    - Being kind feels better than being right.
+    - Compassion is my calm.
+    - Understanding people is how I love them.
+    - Tenderness is a strength I choose daily.
+    - Kind hearts are still fierce.
+  - temperament: Gentle
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Gentle
+    taglineTexts:
+    - Empathy is my first instinct.
+    - Being kind feels better than being right.
+    - Compassion is my calm.
+    - Understanding people is how I love them.
+    - Tenderness is a strength I choose daily.
+    - Kind hearts are still fierce.
+  - temperament: Supportive
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Supportive
+    taglineTexts:
+    - Empathy is my first instinct.
+    - Being kind feels better than being right.
+    - Compassion is my calm.
+    - Understanding people is how I love them.
+    - Tenderness is a strength I choose daily.
+    - Kind hearts are still fierce.
+  - temperament: Honest
+    aboutMeTexts: []
+    personalityTexts:
+    - Honest
+    taglineTexts:
+    - "I don\u2019t say things I don\u2019t mean."
+    - Sincerity first, charm later.
+    - Truth is my comfort zone.
+    - "Honesty feels like air \u2014 necessary and clear."
+    - Real over perfect, always.
+  - temperament: Good listener
+    aboutMeTexts: []
+    personalityTexts:
+    - Good listener
+    taglineTexts:
+    - I listen with my heart, not just my ears.
+    - "I\u2019m here for the long stories, not just the headlines."
+    - When you talk, I really listen.
+    - I think listening is an art form.
+    - I listen like it matters, because it does.
+  - temperament: Genuine
+    aboutMeTexts: []
+    personalityTexts:
+    - Genuine
+    taglineTexts:
+    - "I don\u2019t say things I don\u2019t mean."
+    - Sincerity first, charm later.
+    - Truth is my comfort zone.
+    - "Honesty feels like air \u2014 necessary and clear."
+    - Real over perfect, always.
+  - temperament: Extroverted
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Extroverted
+    taglineTexts:
+    - Too social to stay bored.
+    - Making friends everywhere I go.
+    - "Every day\u2019s an open mic."
+    - I make friends fast and keep them for years.
+    - Wanna be friends?
+    - "Can\u2019t sit still \u2014 life\u2019s too short for that."
+  - temperament: Outgoing
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Outgoing
+    taglineTexts:
+    - Too social to stay bored.
+    - Making friends everywhere I go.
+    - "Every day\u2019s an open mic."
+    - I make friends fast and keep them for years.
+    - Wanna be friends?
+    - "Can\u2019t sit still \u2014 life\u2019s too short for that."
+  - temperament: 'Fun-loving '
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - 'Fun-loving '
+    taglineTexts:
+    - "Catch me if you can \u2014 or don\u2019t, I like the chase."
+    - "Life\u2019s better when you don\u2019t overthink the plan."
+    - I believe in saying yes to fun.
+    - Fun is a lifestyle, not a hobby.
+    - "Let\u2019s turn a walk into an adventure."
+    - "Every day\u2019s a reason to smile."
+  - temperament: Confident
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Confident
+    taglineTexts:
+    - I know who I am, and I like that person.
+    - "I don\u2019t need to prove my worth \u2014 I live it."
+    - "I back myself \u2014 always have, always will."
+    - I trust my own timing.
+    - Self-trust is my foundation.
+    - "I don\u2019t need to be loud to be seen."
+  - temperament: Lively
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Lively
+    taglineTexts:
+    - Too alive to sit still.
+    - My vibe? Sparkling water with extra fizz.
+    - Every room feels warmer when people smile.
+    - My optimism has rhythm.
+    - I live in color, not grayscale.
+  - temperament: Cheerful
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Cheerful
+    taglineTexts:
+    - Good mood? Basically permanent.
+    - "Good vibes and bad puns \u2014 a combo deal."
+    - Joy first, logic later.
+    - Cheerful souls find beauty anywhere.
+    - "Happiness isn\u2019t luck \u2014 it\u2019s craft."
+  - temperament: Optimistic
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Optimistic
+    taglineTexts:
+    - Good mood? Basically permanent.
+    - "Good vibes and bad puns \u2014 a combo deal."
+    - Joy first, logic later.
+    - Cheerful souls find beauty anywhere.
+    - "Happiness isn\u2019t luck \u2014 it\u2019s craft."
+    - Every day is a gift, so take your time!
+  - temperament: Introverted
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Introverted
+    taglineTexts:
+    - A little shy, a lot sincere.
+    - I smile more than I speak.
+    - "I\u2019m better in text than in person \u2014 at first."
+    - I like the corner of the room if you know what I mean.
+  - temperament: Chill
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Chill
+    taglineTexts:
+    - "Catch me if you can \u2014 or don\u2019t, I like the chase."
+    - "Life\u2019s better when you don\u2019t overthink the plan."
+    - Take your time!
+    - "Every day\u2019s a reason to smile."
+    - Chill life!
+  - temperament: Creative
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Creative
+    taglineTexts:
+    - 'Paint first, text later. '
+    - 'Soft jazz, dim light, one glass of red. '
+    - 'I write poetry I never post. '
+    - "Not an emoji \u2014 a feeling. "
+    - 'Complex flavor, simple heart. '
+    - 'Looking for someone who loves moonlight. '
+  - temperament: Dreamy
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Dreamy
+    taglineTexts:
+    - 'Paint first, text later. '
+    - 'Soft jazz, dim light, one glass of red. '
+    - 'I write poetry I never post. '
+    - "Not an emoji \u2014 a feeling. "
+    - 'Complex flavor, simple heart. '
+    - 'Looking for someone who loves moonlight. '
+  - temperament: Expressive
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Expressive
+    taglineTexts:
+    - 'Paint first, text later. '
+    - 'Soft jazz, dim light, one glass of red. '
+    - 'I write poetry I never post. '
+    - "Not an emoji \u2014 a feeling. "
+    - 'Complex flavor, simple heart. '
+    - 'Looking for someone who loves moonlight. '
+  - temperament: Poetic
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Poetic
+    taglineTexts:
+    - 'I write poetry I never post. '
+    - Life is like a poetry you read until the end.
+    - "Not an emoji \u2014 a feeling. "
+    - 'Soft jazz, dim light, one glass of red. '
+    - What life can I read about myself?
+  - temperament: Daydreamer
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Daydreamer
+    taglineTexts:
+    - My imagination is my favorite escape.
+    - "Reality\u2019s nice, but I like adding sparkles."
+    - "I don\u2019t need fairy tales \u2014 I just make my own."
+    - I collect dreams like postcards.
+    - I paint in daydreams first.
+    - "I live like inspiration\u2019s always about to arrive."
+  - temperament: Independent
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Independent
+    taglineTexts:
+    - I love company, not dependency.
+    - I belong to myself first.
+    - My boundaries are made of peace, not pride.
+    - Independent souls make the best partners.
+    - Unattached, but never uninvolved.
+    - "Independence isn\u2019t cold \u2014 it\u2019s quiet strength."
+  - temperament: Ambitious
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Ambitious
+    taglineTexts:
+    - "I\u2019m building something I can be proud of \u2014 myself."
+    - I chase goals, not people.
+    - My goals keep me grounded.
+    - "Dreaming is cute \u2014 doing is better."
+    - Persistence over pressure.
+    - Big dreamer, serious doer.
+  - temperament: Mature
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Mature
+    taglineTexts:
+    - "I\u2019ve stopped trying to be impressive \u2014 I\u2019d rather be honest."
+    - Wisdom looks quieter than I expected.
+    - I like people who think before they talk.
+    - "I don\u2019t want drama; I want depth."
+  - temperament: Disciplined
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Disciplined
+    taglineTexts:
+    - Discipline is my love language to myself.
+    - Discipline is quiet confidence.
+    - Self-discipline is how I turn dreams into habits.
+    - "Dreaming is cute \u2014 doing is better."
+    - My goals keep me grounded.
+  - temperament: Funny
+    aboutMeTexts:
+    - 
+    personalityTexts:
+    - Funny
+    taglineTexts:
+    - I laugh at my own jokes!
+    - "I don\u2019t do pickup lines \u2014 I do callbacks."
+    - My jokes come with subtext.
+    - "I\u2019m serious about not being serious."

@@ -1,0 +1,129 @@
+using System;
+using System.Collections.Generic;
+using System.Data.Common;
+using System.Linq;
+using Unity.Collections;
+using UnityEngine;
+using UnityEngine.UIElements;
+using Random = UnityEngine.Random;
+
+public class ProfileDataGenerator : MonoBehaviour
+{
+    public Vector2Int temperamentAmtRange;
+    public NameDatabaseSO nameDatabase;
+    public TemperamentDatabaseSO temperamentDatabase;
+    public Vector2Int ageAmtRange;
+    [Range(0, 1)] public float verifiedRate;
+    public Vector2Int personalitiesAmtRange;
+    [HideInInspector] public Vector2Int tagsAmtRange;
+    [HideInInspector] public TagsDatabaseSO tagsDatabase;
+    public Vector2Int interestsAmtRange;
+    public InterestsDatabaseSO interestsDatabase;
+    public Vector2Int qaAmtRange;
+    public QADatabaseSO qaDatabase;
+
+    public ProfileData GenerateProfileData()
+    {
+        string[] temperaments = new string[Random.Range(temperamentAmtRange.x, temperamentAmtRange.y + 1)];
+        temperaments = GetFromDatabase(temperamentAmtRange, temperamentDatabase.temperamentsDatabases).Select(x => x.temperament).ToArray();
+        Debug.Log(temperaments);
+        return GenerateProfileData(temperaments);
+    }
+    public ProfileData GenerateProfileData(string[] temperaments)
+    {
+        var dataBases = new TemperamentDataBase[temperaments.Length];
+        var allDatabases = temperamentDatabase.temperamentsDatabases;
+        for (int i = 0; i < dataBases.Length; i++)
+        {
+            for (int j = 0; j < allDatabases.Length; j++)
+            {
+                if (allDatabases[j].temperament == temperaments[i])
+                {
+                    dataBases[i] = allDatabases[j];
+                }
+            }
+        }
+
+        ProfileData profileData = new ProfileData();
+        profileData.Name = nameDatabase.names[Random.Range(0, nameDatabase.names.Length)];
+        profileData.Age = Random.Range(ageAmtRange.x, ageAmtRange.y + 1);
+        profileData.Verified = Random.Range(0f, 1f) < verifiedRate;
+        profileData.TagLine = GetTagLine(dataBases);
+        profileData.AboutMe = GetAboutMe(dataBases);
+        profileData.Interests = GetFromDatabase(interestsAmtRange, interestsDatabase.interests);
+        profileData.MoreAboutMe = GetMoreAboutMe(dataBases);
+        profileData.QAs = GetFromDatabase(qaAmtRange, qaDatabase.QaDatas);
+        return profileData;
+    }
+
+    private string GetAboutMe(TemperamentDataBase[] dataBases)
+    {
+        var aboutMes = new List<string>();
+        for (int i = 0; i < dataBases.Length; i++)
+        {
+            aboutMes = aboutMes.Concat(dataBases[i].aboutMeTexts).ToList();
+        }
+
+        if (aboutMes.Count == 0)
+        {
+            return null;
+        }
+        return aboutMes[Random.Range(0, aboutMes.Count)];
+    }
+    private const int MAX_TRIES = 100;
+    private int _maxTriesCounter;
+
+    private T[] GetFromDatabase<T>(Vector2Int amountRange, T[] database)
+    {
+        if (database.Length == 0)
+        {
+            return Array.Empty<T>();
+        }
+        var limit = database.Length;
+        var rLength = Random.Range(amountRange.x, amountRange.y + 1);
+        rLength = Mathf.Min(rLength, limit);
+        var results = new T[rLength];
+        _maxTriesCounter = 0;
+        for (int i = 0; i < results.Length; i++)
+        {
+            var r = Random.Range(0, database.Length);
+            var selected = database[r];
+            if (!results.Contains(selected) || _maxTriesCounter > MAX_TRIES)
+            {
+                results[i] = selected;
+                _maxTriesCounter = 0;
+            }
+            else
+            {
+                i--;
+                _maxTriesCounter++;
+            }
+        }
+
+        return results;
+    }
+
+    private string GetTagLine(TemperamentDataBase[] dataBases)
+    {
+        var tagLines = new List<string>();
+        for (int i = 0; i < dataBases.Length; i++)
+        {
+            tagLines = tagLines.Concat(dataBases[i].taglineTexts).ToList();
+        }
+        return tagLines[Random.Range(0, tagLines.Count)];
+    }
+    private string[] GetMoreAboutMe(TemperamentDataBase[] dataBases)
+    {
+        //var tags = GetFromDatabase(tagsAmtRange, tagsDatabase.tags);
+        var tags = Array.Empty<string>();
+        var personalitiesDatabase = new List<string>();
+        for (int i = 0; i < dataBases.Length; i++)
+        {
+            personalitiesDatabase = personalitiesDatabase.Concat(dataBases[i].personalityTexts).ToList();
+        }
+
+        var personalities = GetFromDatabase(personalitiesAmtRange, personalitiesDatabase.ToArray());
+        var list = personalities.Concat(tags).ToList();
+        return list.ShuffleList().ToArray();
+    }
+}
