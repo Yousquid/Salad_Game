@@ -20,7 +20,9 @@ public class ProfileUI : MonoBehaviour
     public GameObject QuestionPrefab;
     public Transform QuestionsParent;
 
-    [Header("Super Like")] public RectTransform SuperLike;
+    [Header("Super Like")] 
+    public bool showSuperLike = true;
+    public RectTransform SuperLike;
     public Vector2 superLikeYRange;
     public Vector2 superLikeLocalScaleRange;
     public float superShowThresholdY = 0.5f;
@@ -56,25 +58,28 @@ public class ProfileUI : MonoBehaviour
     private void Update()
     {
         // Handle super like
-        if (ScrollRect.verticalNormalizedPosition < superShowThresholdY)
+        if(showSuperLike)
         {
-            var y = ExtensionMethods.Map(ScrollRect.verticalNormalizedPosition, superShowThresholdYMin,
-                superShowThresholdY,
-                superLikeYRange.y, superLikeYRange.x);
-            y = Mathf.Clamp(y, superLikeYRange.x, superLikeYRange.y);
-            SuperLike.anchoredPosition = SuperLike.anchoredPosition.SetY(y);
-            
-            var s = ExtensionMethods.Map(ScrollRect.verticalNormalizedPosition, superShowThresholdYMin,
-                superShowThresholdY,
-                superLikeLocalScaleRange.y, superLikeLocalScaleRange.x);
-            s = Mathf.Clamp(s, superLikeLocalScaleRange.x, superLikeMaxScale);
-            SuperLike.localScale = new Vector3(s, s, s);
-        }
-        else
-        {
-            SuperLike.anchoredPosition = SuperLike.anchoredPosition.SetY(superLikeYRange.x);
-            SuperLike.localScale = new Vector3(superLikeLocalScaleRange.x, superLikeLocalScaleRange.x,
-                superLikeLocalScaleRange.x);       
+            if (ScrollRect.verticalNormalizedPosition < superShowThresholdY)
+            {
+                var y = ExtensionMethods.Map(ScrollRect.verticalNormalizedPosition, superShowThresholdYMin,
+                    superShowThresholdY,
+                    superLikeYRange.y, superLikeYRange.x);
+                y = Mathf.Clamp(y, superLikeYRange.x, superLikeYRange.y);
+                SuperLike.anchoredPosition = SuperLike.anchoredPosition.SetY(y);
+
+                var s = ExtensionMethods.Map(ScrollRect.verticalNormalizedPosition, superShowThresholdYMin,
+                    superShowThresholdY,
+                    superLikeLocalScaleRange.y, superLikeLocalScaleRange.x);
+                s = Mathf.Clamp(s, superLikeLocalScaleRange.x, superLikeMaxScale);
+                SuperLike.localScale = new Vector3(s, s, s);
+            }
+            else
+            {
+                SuperLike.anchoredPosition = SuperLike.anchoredPosition.SetY(superLikeYRange.x);
+                SuperLike.localScale = new Vector3(superLikeLocalScaleRange.x, superLikeLocalScaleRange.x,
+                    superLikeLocalScaleRange.x);
+            }
         }
 
         // Handle like

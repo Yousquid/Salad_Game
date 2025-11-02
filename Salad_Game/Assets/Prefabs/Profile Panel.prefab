@@ -518,8 +518,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4987775968548515902}
   m_HandleRect: {fileID: 2207333660597890774}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.3828047
+  m_Value: 1.0000002
+  m_Size: 0.38292524
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -648,7 +648,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4803007692137019935}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Navigation, Assembly-CSharp
+        m_MethodName: GenerateNewProfile
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8593350000558764542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -869,7 +881,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 600, y: 110}
+  m_SizeDelta: {x: 550, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4103177606818376187
 MonoBehaviour:
@@ -1209,18 +1221,20 @@ MonoBehaviour:
   MoreAboutMeBubblesParent: {fileID: 1077119319571682688}
   QuestionPrefab: {fileID: 7792711018729508793, guid: 9afd38f82a53b4968b0b889423401e0f, type: 3}
   QuestionsParent: {fileID: 3502307181493761657}
+  showSuperLike: 1
   SuperLike: {fileID: 4929982004300993922}
   superLikeYRange: {x: -100, y: 400}
   superLikeLocalScaleRange: {x: 0.1, y: 0.4}
   superShowThresholdY: 0.6
   superShowThresholdYMin: 0.55
   superLikeMaxScale: 1.5
+  offsetY: 0
   Like: {fileID: 0}
-  likeRangeX: {x: 100, y: -250}
+  likeRangeX: {x: 100, y: -350}
   likeRangeScale: {x: 0.5, y: 3}
   likeRotationMapZ: {x: 0, y: -15}
   Nope: {fileID: 0}
-  nopeRangeX: {x: -100, y: 250}
+  nopeRangeX: {x: -100, y: 350}
   nopeRotationMapZ: {x: 0, y: 15}
 --- !u!1 &4054834262537965913
 GameObject:
@@ -1444,7 +1458,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 43.10193, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1597,7 +1611,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4455793720366129129}
-  - component: {fileID: 9206452428246863272}
+  - component: {fileID: 6044237213502770345}
   m_Layer: 5
   m_Name: Interests Bubbles
   m_TagString: Untagged
@@ -1624,9 +1638,9 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 600, y: 50}
+  m_SizeDelta: {x: 550, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &9206452428246863272
+--- !u!114 &6044237213502770345
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1635,23 +1649,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 5956420262143175013}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.HorizontalLayoutGroup
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GridLayoutGroup
   m_Padding:
     m_Left: 0
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 3
-  m_Spacing: 10
-  m_ChildForceExpandWidth: 0
-  m_ChildForceExpandHeight: 0
-  m_ChildControlWidth: 0
-  m_ChildControlHeight: 0
-  m_ChildScaleWidth: 0
-  m_ChildScaleHeight: 0
-  m_ReverseArrangement: 0
+  m_ChildAlignment: 0
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 120, y: 40}
+  m_Spacing: {x: 10, y: 20}
+  m_Constraint: 0
+  m_ConstraintCount: 2
 --- !u!1 &6157519818635285868
 GameObject:
   m_ObjectHideFlags: 0
@@ -1984,7 +1996,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -308.49997}
+  m_AnchoredPosition: {x: 0, y: -308.50015}
   m_SizeDelta: {x: 600, y: 1000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3321144116543883393
@@ -2648,11 +2660,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1025282941832321632, guid: 6be41715b64ec4d6b89a6169833dbbfb, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 120
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1025282941832321632, guid: 6be41715b64ec4d6b89a6169833dbbfb, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 40
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1025282941832321632, guid: 6be41715b64ec4d6b89a6169833dbbfb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2860,11 +2872,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1025282941832321632, guid: 6be41715b64ec4d6b89a6169833dbbfb, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 120
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1025282941832321632, guid: 6be41715b64ec4d6b89a6169833dbbfb, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 40
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1025282941832321632, guid: 6be41715b64ec4d6b89a6169833dbbfb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3435,6 +3447,14 @@ PrefabInstance:
     - target: {fileID: 4240676841735670346, guid: 9afd38f82a53b4968b0b889423401e0f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5927802672455857993, guid: 9afd38f82a53b4968b0b889423401e0f, type: 3}
+      propertyPath: m_margin.w
+      value: -39.10971
+      objectReference: {fileID: 0}
+    - target: {fileID: 5927802672455857993, guid: 9afd38f82a53b4968b0b889423401e0f, type: 3}
+      propertyPath: m_margin.z
+      value: 33.402954
       objectReference: {fileID: 0}
     - target: {fileID: 7792711018729508793, guid: 9afd38f82a53b4968b0b889423401e0f, type: 3}
       propertyPath: m_Name
