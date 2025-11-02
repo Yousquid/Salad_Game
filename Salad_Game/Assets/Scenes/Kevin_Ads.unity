@@ -330,7 +330,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &813305505
 RectTransform:
   m_ObjectHideFlags: 0
@@ -801,6 +801,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 640189381015852895, guid: d33a18852cbdd414ea22ea3732bcbf07, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1077119319571682688, guid: d33a18852cbdd414ea22ea3732bcbf07, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -943,7 +947,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3099228360141809933, guid: d33a18852cbdd414ea22ea3732bcbf07, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -308.5
+      value: -308.50003
       objectReference: {fileID: 0}
     - target: {fileID: 3358626042149799314, guid: d33a18852cbdd414ea22ea3732bcbf07, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1077,6 +1081,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4771600601388538799, guid: d33a18852cbdd414ea22ea3732bcbf07, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4787975249745206916, guid: d33a18852cbdd414ea22ea3732bcbf07, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1121,6 +1129,10 @@ PrefabInstance:
       propertyPath: profileDataGenerator
       value: 
       objectReference: {fileID: 1764230923}
+    - target: {fileID: 5321823267967652806, guid: d33a18852cbdd414ea22ea3732bcbf07, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5851741764363007028, guid: d33a18852cbdd414ea22ea3732bcbf07, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1135,6 +1147,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5851741764363007028, guid: d33a18852cbdd414ea22ea3732bcbf07, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6477188234071917932, guid: d33a18852cbdd414ea22ea3732bcbf07, type: 3}
+      propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6602931742547378738, guid: d33a18852cbdd414ea22ea3732bcbf07, type: 3}
@@ -1228,6 +1244,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1294314085}
   - component: {fileID: 1294314084}
+  - component: {fileID: 1294314086}
   m_Layer: 0
   m_Name: AdPlayer
   m_TagString: Untagged
@@ -1265,7 +1282,7 @@ VideoPlayer:
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_SkipOnDrop: 1
   m_Looping: 0
   m_WaitForFirstFrame: 1
@@ -1286,6 +1303,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1294314086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294314083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ae8763ebe788ca4caeba96a495bf00e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Ads
+  videoPlayer: {fileID: 1294314084}
+  adScreen: {fileID: 813305504}
+  adImage: {fileID: 813305506}
+  videoClips:
+  - {fileID: 32900000, guid: a9fdd942e34a497488f759810d1c9368, type: 3}
+  - {fileID: 32900000, guid: d54d7a6302dc23943912ad7c309d50a9, type: 3}
+  - {fileID: 32900000, guid: e7b4824b2b5f1304aa9f46ae33076ff5, type: 3}
+  - {fileID: 32900000, guid: 86ab2321a8a910646bc943a3d814003c, type: 3}
 --- !u!1001 &1764230922
 PrefabInstance:
   m_ObjectHideFlags: 0
