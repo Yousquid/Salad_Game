@@ -159,6 +159,8 @@ MonoBehaviour:
   partListC:
   - {fileID: 3013840861615642128, guid: 8aa4cd026b0ffd249b525d23133c236c, type: 3}
   spawnPoint: {fileID: 147532299}
+  useSpawnOffset: 0
+  spawnOffset: {x: 0, y: 0, z: 0}
 --- !u!4 &147532299
 Transform:
   m_ObjectHideFlags: 0
@@ -1731,7 +1733,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 55
 --- !u!114 &1803625367
 MonoBehaviour:
   m_ObjectHideFlags: 0
