@@ -11,6 +11,8 @@ public class VipSystemTMP : MonoBehaviour
     public Button viewVipButton;
     public Button chargeButton;
     public Button closeButton;
+    public PaymentPanel paymentPanel;
+
 
     [Header("VIP Data")]
     public int currentVip = 0;
@@ -44,6 +46,8 @@ public class VipSystemTMP : MonoBehaviour
             totalMoney += money;
 
             currentVip = Mathf.Clamp((int)(totalMoney / 1000000f), 0,100000000);
+
+            paymentPanel.EnablePaymentPanel("XXX");
 
             UpdateVipText();
             chargeInput.text = "";
