@@ -12,6 +12,7 @@ public class Ads : MonoBehaviour
     public VideoClip[] videoClips;
 
     private bool isPlaying = false;
+    private int lastAdCount = 0;
 
     void Start()
     {
@@ -21,14 +22,22 @@ public class Ads : MonoBehaviour
 
     void Update()
     {
-        if (Keyboard.current != null && Keyboard.current.iKey.wasPressedThisFrame && !isPlaying)
+        if (MatchGenerator.likesData != null && MatchGenerator.likesData.Count > 0)
         {
-            PlayRandomAd();
+            int likeCount = MatchGenerator.likesData.Count;
+
+            if (likeCount % 3 == 0 && likeCount != lastAdCount)
+            {
+                PlayRandomAd();
+                lastAdCount = likeCount;
+            }
         }
     }
 
-    void PlayRandomAd()
+    public void PlayRandomAd()
     {
+        if (isPlaying) return;
+
         if (videoClips == null || videoClips.Length == 0)
         {
             return;
@@ -46,12 +55,12 @@ public class Ads : MonoBehaviour
         videoPlayer.loopPointReached += OnVideoEnded;
     }
 
-    void OnVideoEnded(VideoPlayer vp)
+    private void OnVideoEnded(VideoPlayer vp)
     {
         isPlaying = false;
         videoPlayer.loopPointReached -= OnVideoEnded;
-
         videoPlayer.Stop();
+
         if (adScreen != null)
             adScreen.SetActive(false);
     }
