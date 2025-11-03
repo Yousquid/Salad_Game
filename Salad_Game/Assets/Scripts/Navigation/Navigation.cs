@@ -39,6 +39,9 @@ public class Navigation : MonoBehaviour
     private Color rightColor = new Color(1f, 0.6f, 0.6f);
     private Color leftColor = new Color(0.6f, 1f, 0.6f);
 
+    public ProfileData currentProfile;
+    public GameObject currentObject;
+
     void Start()
     {
         panelRect = profileUI.GetComponent<RectTransform>();
@@ -86,6 +89,19 @@ public class Navigation : MonoBehaviour
             if (Mathf.Abs(deltaX) > swipeThreshold)
             {
                 targetAngleZ = 0f;
+
+                Vector3 mousePos = Input.mousePosition;
+
+                float halfWidth = Screen.width / 2f;
+
+                if (mousePos.x < halfWidth)
+                {
+                    
+                }
+                else
+                {
+                    AddCurrentNPCToLikes();
+                }
                 GenerateNewProfile();
             }
             isDragging = false;
@@ -123,6 +139,17 @@ public class Navigation : MonoBehaviour
         panelRect.RotateAround(worldBottomCenter, Vector3.forward, deltaAngle);
     }
 
+    public void AddToSuperLike()
+    { 
+        
+    }
+
+    private void AddCurrentNPCToLikes()
+    {
+        MatchGenerator.likesData.Add(currentProfile);
+        MatchGenerator.likesGameObjects.Add(currentObject);
+    }
+
     public void GenerateNewProfile()
     {
         if (profileGenerator == null || randomFruit == null || profileUI == null)
@@ -136,6 +163,8 @@ public class Navigation : MonoBehaviour
         }
 
         var newProfile = profileGenerator.GenerateProfileData();
+        currentProfile = newProfile;
+        currentObject = GameObject.Find("Fruit");
         profileUI.UpdateUI(newProfile);
         randomFruit.CombineRandom();
 

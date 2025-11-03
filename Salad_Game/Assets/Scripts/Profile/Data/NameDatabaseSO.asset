@@ -13,11 +13,6 @@ MonoBehaviour:
   m_Name: NameDatabaseSO
   m_EditorClassIdentifier: Assembly-CSharp::NameDatabaseSO
   names:
-  - Andson
-  - Andy
-  - Chardin
-  - Kevin
-  - Lam
   - Casey
   - Riley
   - Pip
