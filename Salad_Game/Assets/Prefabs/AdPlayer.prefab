@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6592864173388589505
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5019463461235989122}
+  - component: {fileID: 6174386762573699225}
+  - component: {fileID: 1839613798694999224}
+  m_Layer: 0
+  m_Name: AdPlayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5019463461235989122
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6592864173388589505}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!328 &6174386762573699225
+VideoPlayer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6592864173388589505}
+  m_Enabled: 1
+  m_VideoClip: {fileID: 32900000, guid: a9fdd942e34a497488f759810d1c9368, type: 3}
+  m_TargetCameraAlpha: 1
+  m_TargetCamera3DLayout: 0
+  m_TargetCamera: {fileID: 0}
+  m_TargetTexture: {fileID: 8400000, guid: 34c3394aa8735d54bbc10a8527b369f6, type: 2}
+  m_TimeReference: 0
+  m_TargetMaterialRenderer: {fileID: 0}
+  m_TargetMaterialProperty: <noninit>
+  m_RenderMode: 2
+  m_AspectRatio: 2
+  m_DataSource: 0
+  m_TimeUpdateMode: 2
+  m_PlaybackSpeed: 1
+  m_AudioOutputMode: 2
+  m_TargetAudioSources:
+  - {fileID: 0}
+  m_DirectAudioVolumes:
+  - 1
+  m_Url: 
+  m_EnabledAudioTracks: 01
+  m_DirectAudioMutes: 00
+  m_ControlledAudioTrackCount: 1
+  m_PlayOnAwake: 0
+  m_SkipOnDrop: 1
+  m_Looping: 0
+  m_WaitForFirstFrame: 1
+  m_FrameReadyEventEnabled: 0
+  m_VideoShaders: []
+--- !u!114 &1839613798694999224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6592864173388589505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ae8763ebe788ca4caeba96a495bf00e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Ads
+  videoPlayer: {fileID: 6174386762573699225}
+  adScreen: {fileID: 0}
+  adImage: {fileID: 0}
+  videoClips:
+  - {fileID: 32900000, guid: a9fdd942e34a497488f759810d1c9368, type: 3}
+  - {fileID: 32900000, guid: d54d7a6302dc23943912ad7c309d50a9, type: 3}
+  - {fileID: 32900000, guid: e7b4824b2b5f1304aa9f46ae33076ff5, type: 3}
+  - {fileID: 32900000, guid: 86ab2321a8a910646bc943a3d814003c, type: 3}
+  - {fileID: 32900000, guid: 4f3e859169b3d2f43b37096ba40cadad, type: 3}
+  - {fileID: 32900000, guid: 0b85f9097ed352e42997c1539288fce9, type: 3}
+  - {fileID: 32900000, guid: f5f64f41be34c9849b65637dbcfffda0, type: 3}
+  - {fileID: 32900000, guid: 011078e149e9ace429c94951ba468d31, type: 3}
+  - {fileID: 32900000, guid: 5317e8dbfb0cb3845adcfe3835c371a8, type: 3}
+  - {fileID: 32900000, guid: 389686cd202e15a47926675b32676e88, type: 3}

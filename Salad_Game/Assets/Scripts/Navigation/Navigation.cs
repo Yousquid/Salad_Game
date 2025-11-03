@@ -39,8 +39,13 @@ public class Navigation : MonoBehaviour
     private Color rightColor = new Color(1f, 0.6f, 0.6f);
     private Color leftColor = new Color(0.6f, 1f, 0.6f);
 
+    public ProfileData currentProfile;
+    public GameObject currentObject;
+    public MatchGenerator matchGenerator;
+
     void Start()
     {
+        matchGenerator = GetComponent<MatchGenerator>();
         panelRect = profileUI.GetComponent<RectTransform>();
         panelImage = panelRect.GetComponent<Image>();
         if (panelImage != null)
@@ -59,7 +64,7 @@ public class Navigation : MonoBehaviour
         var mouse = Mouse.current;
         if (mouse == null) return;
 
-        if (mouse.leftButton.wasPressedThisFrame)
+        if (mouse.leftButton.wasPressedThisFrame && !matchGenerator.isMatching)
         {
             isDragging = true;
             pressPos = mouse.position.ReadValue();
@@ -80,13 +85,25 @@ public class Navigation : MonoBehaviour
             }
         }
 
-        if (mouse.leftButton.wasReleasedThisFrame && isDragging)
+        if (mouse.leftButton.wasReleasedThisFrame && isDragging )
         {
             float deltaX = (mouse.position.ReadValue().x - pressPos.x) / screenWidth;
             if (Mathf.Abs(deltaX) > swipeThreshold)
             {
                 targetAngleZ = 0f;
-                GenerateNewProfile();
+
+                Vector3 mousePos = Input.mousePosition;
+
+                float halfWidth = Screen.width / 2f;
+
+                if (mousePos.x < halfWidth)
+                {
+                    GenerateNewProfile();
+                }
+                else
+                {
+                    PossibleInstantMatch();
+                }
             }
             isDragging = false;
         }
@@ -123,6 +140,36 @@ public class Navigation : MonoBehaviour
         panelRect.RotateAround(worldBottomCenter, Vector3.forward, deltaAngle);
     }
 
+    public void AddToSuperLike()
+    {
+        matchGenerator.superlikeData = currentProfile;
+        matchGenerator.superlikeGameObject = currentObject;
+    }
+
+    private void AddCurrentNPCToLikes()
+    {
+        matchGenerator.likesData.Add(currentProfile);
+        matchGenerator.likesGameObjects.Add(currentObject);
+        MatchGenerator.likesNumber++;
+    }
+
+    private void PossibleInstantMatch()
+    {
+        float randomer = Random.Range(0, 100);
+        if (randomer >= 12)
+        {
+            AddCurrentNPCToLikes();
+            GenerateNewProfile();
+        }
+        else
+        {
+            matchGenerator.currentMatachGameObject = currentObject;
+            matchGenerator.currentMatchData = currentProfile;
+            matchGenerator.DoMatch();
+        }
+
+    }
+
     public void GenerateNewProfile()
     {
         if (profileGenerator == null || randomFruit == null || profileUI == null)
@@ -136,6 +183,8 @@ public class Navigation : MonoBehaviour
         }
 
         var newProfile = profileGenerator.GenerateProfileData();
+        currentProfile = newProfile;
+        currentObject = GameObject.Find("Fruit");
         profileUI.UpdateUI(newProfile);
         randomFruit.CombineRandom();
 
