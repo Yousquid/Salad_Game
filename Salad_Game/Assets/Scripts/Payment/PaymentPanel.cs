@@ -33,7 +33,7 @@ public class PaymentPanel : MonoBehaviour
         _rectTransform = GetComponent<RectTransform>();
         _rectTransform.anchoredPosition = _rectTransform.anchoredPosition.SetY(disableYPos);
         retryImage.color = retryImage.color.SetAlpha(0);
-        EnablePaymentPanel("111");
+        // EnablePaymentPanel("111");
     }
     public void ProcessPayment()
     {
