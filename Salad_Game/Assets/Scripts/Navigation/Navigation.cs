@@ -150,7 +150,7 @@ public class Navigation : MonoBehaviour
     {
         matchGenerator.likesData.Add(currentProfile);
         matchGenerator.likesGameObjects.Add(currentObject);
-        matchGenerator.likesNumber++;
+        MatchGenerator.likesNumber++;
     }
 
     private void PossibleInstantMatch()

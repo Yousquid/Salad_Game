@@ -21,7 +21,7 @@ public class MatchGenerator : MonoBehaviour
     private bool hasRandomed = false;
     private bool hasShown = false;
 
-    public int likesNumber = 0;
+    public static int likesNumber = 0;
     public TextMeshProUGUI matchText;
 
 

@@ -875,7 +875,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3099228360141809933, guid: d33a18852cbdd414ea22ea3732bcbf07, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -308.50024
+      value: -308.50043
       objectReference: {fileID: 0}
     - target: {fileID: 3358626042149799314, guid: d33a18852cbdd414ea22ea3732bcbf07, type: 3}
       propertyPath: m_AnchorMax.y
@@ -2113,6 +2113,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MatchGenerator
   navigation: {fileID: 0}
+  likesData: []
+  likesGameObjects: []
+  superlikeData:
+    Name: 
+    Age: 0
+    Verified: 0
+    TagLine: 
+    AboutMe: 
+    Interests: []
+    MoreAboutMe: []
+    QAs: []
+  superlikeGameObject: {fileID: 0}
   currentMatchData:
     Name: 
     Age: 0
@@ -2124,6 +2136,7 @@ MonoBehaviour:
     QAs: []
   currentMatachGameObject: {fileID: 0}
   thisCanvas: {fileID: 1111324293}
+  isMatching: 0
   matchText: {fileID: 449673337}
 --- !u!1001 &1758006351
 PrefabInstance:
