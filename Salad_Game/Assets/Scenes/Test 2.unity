@@ -217,7 +217,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &247231407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,10 +268,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -1262,7 +1262,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3099228360141809933, guid: d33a18852cbdd414ea22ea3732bcbf07, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -308.50058
+      value: -308.50003
       objectReference: {fileID: 0}
     - target: {fileID: 3358626042149799314, guid: d33a18852cbdd414ea22ea3732bcbf07, type: 3}
       propertyPath: m_AnchorMax.y
@@ -3311,8 +3311,12 @@ PrefabInstance:
       value: Self Profile Panel
       objectReference: {fileID: 0}
     - target: {fileID: 4056853859149006696, guid: 8ac166ec09dac4de59309b2fceb09f48, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 2150
+      objectReference: {fileID: 0}
+    - target: {fileID: 4056853859149006696, guid: 8ac166ec09dac4de59309b2fceb09f48, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1037.0001
+      value: 1086.9999
       objectReference: {fileID: 0}
     - target: {fileID: 4078002581605178834, guid: 8ac166ec09dac4de59309b2fceb09f48, type: 3}
       propertyPath: m_SizeDelta.x
@@ -3993,6 +3997,10 @@ PrefabInstance:
     - target: {fileID: 6234165908682413793, guid: 8ac166ec09dac4de59309b2fceb09f48, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6253232681075745257, guid: 8ac166ec09dac4de59309b2fceb09f48, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 6454271585519991152, guid: 8ac166ec09dac4de59309b2fceb09f48, type: 3}
       propertyPath: m_AnchorMax.y
@@ -8046,8 +8054,8 @@ SceneRoots:
   m_Roots:
   - {fileID: 408644347}
   - {fileID: 1882930415}
-  - {fileID: 247231411}
   - {fileID: 1677767793}
+  - {fileID: 247231411}
   - {fileID: 127875080}
   - {fileID: 574018365}
   - {fileID: 1689853192}
