@@ -41,9 +41,11 @@ public class Navigation : MonoBehaviour
 
     public ProfileData currentProfile;
     public GameObject currentObject;
+    public MatchGenerator matchGenerator;
 
     void Start()
     {
+        matchGenerator = GetComponent<MatchGenerator>();
         panelRect = profileUI.GetComponent<RectTransform>();
         panelImage = panelRect.GetComponent<Image>();
         if (panelImage != null)
@@ -96,13 +98,12 @@ public class Navigation : MonoBehaviour
 
                 if (mousePos.x < halfWidth)
                 {
-                    
+                    GenerateNewProfile();
                 }
                 else
                 {
-                    AddCurrentNPCToLikes();
+                    PossibleInstantMatch();
                 }
-                GenerateNewProfile();
             }
             isDragging = false;
         }
@@ -140,14 +141,31 @@ public class Navigation : MonoBehaviour
     }
 
     public void AddToSuperLike()
-    { 
-        
+    {
+        MatchGenerator.superlikeData = currentProfile;
+        MatchGenerator.superlikeGameObject = currentObject;
     }
 
     private void AddCurrentNPCToLikes()
     {
         MatchGenerator.likesData.Add(currentProfile);
         MatchGenerator.likesGameObjects.Add(currentObject);
+    }
+
+    private void PossibleInstantMatch()
+    {
+        float randomer = Random.Range(0, 100);
+        if (randomer >= 95)
+        {
+            AddCurrentNPCToLikes();
+        }
+        else
+        {
+            matchGenerator.currentMatachGameObject = currentObject;
+            matchGenerator.currentMatchData = currentProfile;
+            matchGenerator.DoMatch();
+        }
+
     }
 
     public void GenerateNewProfile()
