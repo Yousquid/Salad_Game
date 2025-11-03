@@ -64,7 +64,7 @@ public class Navigation : MonoBehaviour
         var mouse = Mouse.current;
         if (mouse == null) return;
 
-        if (mouse.leftButton.wasPressedThisFrame)
+        if (mouse.leftButton.wasPressedThisFrame && !matchGenerator.isMatching)
         {
             isDragging = true;
             pressPos = mouse.position.ReadValue();
@@ -85,7 +85,7 @@ public class Navigation : MonoBehaviour
             }
         }
 
-        if (mouse.leftButton.wasReleasedThisFrame && isDragging)
+        if (mouse.leftButton.wasReleasedThisFrame && isDragging )
         {
             float deltaX = (mouse.position.ReadValue().x - pressPos.x) / screenWidth;
             if (Mathf.Abs(deltaX) > swipeThreshold)
@@ -142,22 +142,24 @@ public class Navigation : MonoBehaviour
 
     public void AddToSuperLike()
     {
-        MatchGenerator.superlikeData = currentProfile;
-        MatchGenerator.superlikeGameObject = currentObject;
+        matchGenerator.superlikeData = currentProfile;
+        matchGenerator.superlikeGameObject = currentObject;
     }
 
     private void AddCurrentNPCToLikes()
     {
-        MatchGenerator.likesData.Add(currentProfile);
-        MatchGenerator.likesGameObjects.Add(currentObject);
+        matchGenerator.likesData.Add(currentProfile);
+        matchGenerator.likesGameObjects.Add(currentObject);
+        matchGenerator.likesNumber++;
     }
 
     private void PossibleInstantMatch()
     {
         float randomer = Random.Range(0, 100);
-        if (randomer >= 95)
+        if (randomer >= 50)
         {
             AddCurrentNPCToLikes();
+            GenerateNewProfile();
         }
         else
         {
