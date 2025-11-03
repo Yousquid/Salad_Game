@@ -156,7 +156,7 @@ public class Navigation : MonoBehaviour
     private void PossibleInstantMatch()
     {
         float randomer = Random.Range(0, 100);
-        if (randomer >= 50)
+        if (randomer >= 12)
         {
             AddCurrentNPCToLikes();
             GenerateNewProfile();
