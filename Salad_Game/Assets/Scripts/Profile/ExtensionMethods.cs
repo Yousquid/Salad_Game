@@ -234,4 +234,18 @@ public static class ExtensionMethods {
 
 		return (value - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
 	}
+	
+	public static float GaussianRandom(float mean = 0f, float stdDev = 1f)
+	{
+		// 生成两个 [0,1) 的均匀随机数
+		float u1 = 1.0f - Random.value;  // 避免 log(0)
+		float u2 = 1.0f - Random.value;
+
+		// Box-Muller transform
+		float randStdNormal = Mathf.Sqrt(-2.0f * Mathf.Log(u1)) * Mathf.Sin(2.0f * Mathf.PI * u2);
+
+		// 转换为指定均值(mean)和标准差(stdDev)
+		return mean + stdDev * randStdNormal;
+	}
+
 }
