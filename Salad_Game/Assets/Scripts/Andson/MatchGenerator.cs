@@ -22,6 +22,9 @@ public class MatchGenerator : MonoBehaviour
     private bool hasShown = false;
 
     public static int likesNumber = 0;
+    public static int unlikesNumber = 0;
+    public static int totalSwipesNumber = 0;
+
     public TextMeshProUGUI matchText;
 
 
@@ -46,6 +49,29 @@ public class MatchGenerator : MonoBehaviour
     {
         return likesNumber;
     }
+
+    public int GetUnlikeNumbers()
+    {
+        return unlikesNumber;
+    }
+
+    public int GetTotalSwipes()
+    {
+        return totalSwipesNumber;
+    }
+
+    public static void RecordLike()
+    {
+        likesNumber++;
+        totalSwipesNumber++;
+    }
+
+    public static void RecordUnlike()
+    {
+        unlikesNumber++;
+        totalSwipesNumber++;
+    }
+
 
     public void OnClickSendAText()
     {
