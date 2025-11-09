@@ -98,10 +98,12 @@ public class Navigation : MonoBehaviour
 
                 if (mousePos.x < halfWidth)
                 {
+                    MatchGenerator.RecordUnlike();
                     GenerateNewProfile();
                 }
                 else
                 {
+                    MatchGenerator.RecordLike();
                     PossibleInstantMatch();
                 }
             }
