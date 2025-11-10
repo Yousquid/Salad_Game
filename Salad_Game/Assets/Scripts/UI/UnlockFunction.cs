@@ -30,6 +30,8 @@ public class UnlockFunction : MonoBehaviour
 
     private int stageIndex = 0;
     private int stageStartSwipeCount = 0;
+    private bool _percentageReportUnlocked = false;
+    public bool PercentageReportUnlocked => _percentageReportUnlocked;
 
     void Start()
     {
@@ -48,7 +50,7 @@ public class UnlockFunction : MonoBehaviour
 
     void Update()
     {
-        int total = MatchGenerator.totalSwipesNumber;
+        int total = MatchGenerator.Instance.totalSwipesNumber;
         UpdateProgress(total);
         CheckUnlocks(total);
     }
@@ -116,6 +118,7 @@ public class UnlockFunction : MonoBehaviour
         if (icon == UnlockUI.IconTypes.Percentage && profileDataGenerator != null)
         {
             ApplyThirdStageAdjustments(profileDataGenerator);
+            _percentageReportUnlocked = true;
         }
     }
 

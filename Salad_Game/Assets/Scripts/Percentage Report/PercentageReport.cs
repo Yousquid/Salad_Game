@@ -23,6 +23,7 @@ public class PercentageReport : MonoBehaviour
 
     public void FadeInPercentageReport()
     {
+        ResetPercentageReport();
         percentageReportLeft.rectTransform.DOAnchorPosX(percentageReportLeftMinMaxX.y, animationDurationInSeconds);
         percentageReportRight.rectTransform.DOAnchorPosX(percentageReportRightMinMaxX.y, animationDurationInSeconds);
         Debug.Log(ExtensionMethods.GaussianRandom());

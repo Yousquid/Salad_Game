@@ -1,14 +1,16 @@
+using System.Collections;
 using UnityEngine;
 using Unity.Collections;
 using System.Collections.Generic;
 using TMPro;
-public class MatchGenerator : MonoBehaviour
+public class MatchGenerator : Singleton<MatchGenerator>
 {
     public Navigation navigation;
     public  List<ProfileData>  likesData;
     public  List<GameObject> likesGameObjects;
     public  ProfileData superlikeData;
     public  GameObject superlikeGameObject;
+    public GameObject matchEffect;
 
     public ProfileData currentMatchData;
     public GameObject currentMatachGameObject;
@@ -21,15 +23,17 @@ public class MatchGenerator : MonoBehaviour
     private bool hasRandomed = false;
     private bool hasShown = false;
 
-    public static int likesNumber = 0;
-    public static int unlikesNumber = 0;
-    public static int totalSwipesNumber = 0;
+    public int likesNumber = 0;
+    public int unlikesNumber = 0;
+    public int totalSwipesNumber = 0;
 
     public TextMeshProUGUI matchText;
 
 
-    void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+        
         if (likesData == null) likesData = new List<ProfileData>();
         if (likesGameObjects == null) likesGameObjects = new List<GameObject>();
     }
@@ -60,13 +64,13 @@ public class MatchGenerator : MonoBehaviour
         return totalSwipesNumber;
     }
 
-    public static void RecordLike()
+    public void RecordLike()
     {
         likesNumber++;
         totalSwipesNumber++;
     }
 
-    public static void RecordUnlike()
+    public void RecordUnlike()
     {
         unlikesNumber++;
         totalSwipesNumber++;
@@ -122,7 +126,7 @@ public class MatchGenerator : MonoBehaviour
 
                 if (currentMatchData == null || currentMatchGameObject == null)
                 {
-                    hasRandomed = false;  // ÏÂ´ÎÖØ³é
+                    hasRandomed = false;  // ï¿½Â´ï¿½ï¿½Ø³ï¿½
                     return;
                 }
 
@@ -138,7 +142,7 @@ public class MatchGenerator : MonoBehaviour
             }
             else
             {
-                // Ã»ÓÐ¿ÉÓÃµÄ like£¬ÖØÖÃ¼ÆÊ±
+                // Ã»ï¿½Ð¿ï¿½ï¿½Ãµï¿½ likeï¿½ï¿½ï¿½ï¿½ï¿½Ã¼ï¿½Ê±
                 hasRandomed = false;
                 hasShown = false;
             }
@@ -147,13 +151,23 @@ public class MatchGenerator : MonoBehaviour
 
     public void DoMatch()
     {
-
         ShowMatchUI();
+        if(matchEffect != null)
+        {
+            var e = Instantiate(matchEffect);
+            StartCoroutine(DelayedDestroy(e, 10f));
+        }
+    }
+    IEnumerator DelayedDestroy(GameObject objectToDestroy, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Destroy(objectToDestroy);
     }
     public void ShowMatchUI()
     {
         isMatching = true;
         thisCanvas.SetActive(true);
+        EventBetter.Raise(new PlaySFXEvent(PlaySFXEvent.SFXType.Match));
         matchText.text = $"You and {currentMatchData.Name} have liked each other!";
     }
 }

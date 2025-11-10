@@ -1,24 +1,31 @@
-﻿using Unity.UI.Shaders.Sample;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using Unity.UI.Shaders.Sample;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class Navigation : MonoBehaviour
 {
-    [Header("Profile System")]
-    public ProfileUI profileUI;
+    public UnlockFunction unlockFunction;
+    public PercentageReport percentageReport;
+    [Range(0, 1)] public float showPercentageReportChance = 0.5f;
+    public float showPercentageReportSeconds = 2f;
+    [Header("Profile System")] public ProfileUI profileUI;
     public ProfileDataGenerator profileGenerator;
     public RandomFruit randomFruit;
 
-    [Header("Mouse Swipe Settings")]
-    [Range(0.05f, 0.5f)]
+    [Header("Mouse Swipe Settings")] [Range(0.05f, 0.5f)]
     public float swipeThreshold = 0.15f;
+
     public float rotationMultiplier = 10f;
     public float returnSpeed = 10f;
     public float maxTilt = 15f;
 
-    [Header("Camera Settings")]
-    public Camera mainCamera;
+    [Header("Camera Settings")] public Camera mainCamera;
     public float cameraDistance = 5f;
     public float horizontalAngleRange = 10f;
     public float verticalAngleRange = 6f;
@@ -43,6 +50,8 @@ public class Navigation : MonoBehaviour
     public ProfileData currentProfile;
     public GameObject currentObject;
     public MatchGenerator matchGenerator;
+    
+    private Coroutine _showPercentageReportCoroutine;
 
     void Start()
     {
@@ -86,7 +95,7 @@ public class Navigation : MonoBehaviour
             }
         }
 
-        if (mouse.leftButton.wasReleasedThisFrame && isDragging )
+        if (mouse.leftButton.wasReleasedThisFrame && isDragging)
         {
             float deltaX = (mouse.position.ReadValue().x - pressPos.x) / screenWidth;
             if (Mathf.Abs(deltaX) > swipeThreshold)
@@ -96,18 +105,44 @@ public class Navigation : MonoBehaviour
                 Vector3 mousePos = Input.mousePosition;
 
                 float halfWidth = Screen.width / 2f;
-
+                float r = Random.Range(0, 1);
+                bool showPercentageReport = unlockFunction.PercentageReportUnlocked && r < showPercentageReportChance;
                 if (mousePos.x < halfWidth)
                 {
-                    MatchGenerator.RecordUnlike();
-                    GenerateNewProfile();
+                    MatchGenerator.Instance.RecordUnlike();
+                    EventBetter.Raise(new PlaySFXEvent(PlaySFXEvent.SFXType.SwipeLeft));
+                    if (showPercentageReport)
+                    {
+                        if (_showPercentageReportCoroutine != null)
+                        {
+                            StopCoroutine(_showPercentageReportCoroutine);
+                        }
+                        StartCoroutine(ShowPercentageReportRoutine(GenerateNewProfile));
+                    }
+                    else
+                    {
+                        GenerateNewProfile();   
+                    }
                 }
                 else
                 {
-                    MatchGenerator.RecordLike();
-                    PossibleInstantMatch();
+                    MatchGenerator.Instance.RecordLike();
+                    EventBetter.Raise(new PlaySFXEvent(PlaySFXEvent.SFXType.SwipeRight));
+                    if (showPercentageReport)
+                    {
+                        if (_showPercentageReportCoroutine != null)
+                        {
+                            StopCoroutine(_showPercentageReportCoroutine);
+                        }
+                        StartCoroutine(ShowPercentageReportRoutine(PossibleInstantMatch));
+                    }
+                    else
+                    {
+                        PossibleInstantMatch();   
+                    }
                 }
             }
+
             isDragging = false;
         }
 
@@ -127,9 +162,19 @@ public class Navigation : MonoBehaviour
 
         if (mainCamera != null)
         {
-            mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, targetCamPos, Time.deltaTime * cameraMoveSpeed);
-            mainCamera.transform.rotation = Quaternion.Slerp(mainCamera.transform.rotation, targetCamRot, Time.deltaTime * cameraMoveSpeed);
+            mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, targetCamPos,
+                Time.deltaTime * cameraMoveSpeed);
+            mainCamera.transform.rotation = Quaternion.Slerp(mainCamera.transform.rotation, targetCamRot,
+                Time.deltaTime * cameraMoveSpeed);
         }
+    }
+
+    private IEnumerator ShowPercentageReportRoutine(Action actionToPerform)
+    {
+        percentageReport.FadeInPercentageReport();
+        yield return new WaitForSeconds(showPercentageReportSeconds);
+        percentageReport.FadeOutPercentageReport();
+        actionToPerform.Invoke();
     }
 
     private void RotateAroundBottomCenter(float deltaAngle)
@@ -153,7 +198,7 @@ public class Navigation : MonoBehaviour
     {
         matchGenerator.likesData.Add(currentProfile);
         matchGenerator.likesGameObjects.Add(currentObject);
-        MatchGenerator.likesNumber++;
+        MatchGenerator.Instance.likesNumber++;
     }
 
     private void PossibleInstantMatch()
@@ -170,7 +215,6 @@ public class Navigation : MonoBehaviour
             matchGenerator.currentMatchData = currentProfile;
             matchGenerator.DoMatch();
         }
-
     }
 
     public void GenerateNewProfile()

@@ -33,10 +33,11 @@ public class UnlockInformation : MonoBehaviour
     [Button]
     public void ShowUnlockInformation(UnlockUI.IconTypes iconType, string information)
     {
+        EventBetter.Raise(new PlaySFXEvent(PlaySFXEvent.SFXType.Unlock));
         ResetUnlockInformation();
         Sequence animation = DOTween.Sequence();
-        animation.Append(_rectTransform.DOLocalMoveY(informationPanelOpenMinMaxY.y, informationPanelDuration));
-        animation.Join(_rectTransform.DOScale(new Vector3(endScale, endScale, 1), informationPanelDuration));
+        animation.Append(_rectTransform.DOLocalMoveY(informationPanelOpenMinMaxY.y, informationPanelDuration).SetEase(Ease.InOutElastic));
+        animation.Join(_rectTransform.DOScale(new Vector3(endScale, endScale, 1), informationPanelDuration).SetEase(Ease.InOutElastic));
         switch (iconType)
         {
             case UnlockUI.IconTypes.SuperLike:
@@ -55,8 +56,8 @@ public class UnlockInformation : MonoBehaviour
 
     public void HideUnlockInformation()
     {
-        _rectTransform.DOLocalMoveY(informationPanelCloseY, informationPanelDuration);
-        _rectTransform.DOScale(new Vector3(startScale, startScale, 1), informationPanelDuration);
+        _rectTransform.DOLocalMoveY(informationPanelCloseY, informationPanelDuration).SetEase(Ease.InOutElastic);
+        _rectTransform.DOScale(new Vector3(startScale, startScale, 1), informationPanelDuration).SetEase(Ease.InOutElastic);
     }
 
     public void ResetUnlockInformation()

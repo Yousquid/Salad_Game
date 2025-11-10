@@ -22,9 +22,9 @@ public class Ads : MonoBehaviour
 
     void Update()
     {
-        if (MatchGenerator.likesNumber > 0)
+        if (MatchGenerator.Instance.likesNumber > 0)
         {
-            int likeCount = MatchGenerator.likesNumber;
+            int likeCount = MatchGenerator.Instance.likesNumber;
 
             if (likeCount % 3 == 0 && likeCount != lastAdCount)
             {

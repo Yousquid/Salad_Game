@@ -44,13 +44,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f7dbe25cc508496aba78e1be8ec90ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ProfileDataGenerator
+  temperamentAmtRange: {x: 1, y: 2}
+  nameDatabase: {fileID: 11400000, guid: 2e28566fd74ab4df4a2df147d3d2cc2b, type: 2}
   temperamentDatabase: {fileID: 11400000, guid: 098a863fd8dd64abfaaca5b7fbdea19d, type: 2}
   ageAmtRange: {x: 5, y: 10}
   verifiedRate: 0.7
-  personalitiesAmtRange: {x: 1, y: 2}
+  personalitiesAmtRange: {x: 2, y: 3}
   tagsAmtRange: {x: 0, y: 1}
   tagsDatabase: {fileID: 11400000, guid: 96614cf880a3d4faebba9d47f7072710, type: 2}
-  interestsAmtRange: {x: 0, y: 1}
+  interestsAmtRange: {x: 3, y: 7}
   interestsDatabase: {fileID: 11400000, guid: f8a6001848b28449ab047daf146c4ae8, type: 2}
-  qaAmtRange: {x: 0, y: 1}
+  qaAmtRange: {x: 1, y: 2}
   qaDatabase: {fileID: 11400000, guid: c0133635f059b4e2b976394ac3da295f, type: 2}
