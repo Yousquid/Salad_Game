@@ -211,9 +211,8 @@ public class Navigation : MonoBehaviour
         }
         else
         {
-            matchGenerator.currentMatachGameObject = currentObject;
-            matchGenerator.currentMatchData = currentProfile;
-            matchGenerator.DoMatch();
+            AddCurrentNPCToLikes();
+            GenerateNewProfile();
         }
     }
 
