@@ -1167,7 +1167,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3099228360141809933, guid: d33a18852cbdd414ea22ea3732bcbf07, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -308.50006
+      value: -308.50012
       objectReference: {fileID: 0}
     - target: {fileID: 3358626042149799314, guid: d33a18852cbdd414ea22ea3732bcbf07, type: 3}
       propertyPath: m_AnchorMax.y
@@ -2372,6 +2372,17 @@ RectTransform:
   m_AnchoredPosition: {x: 960, y: 540}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1247712335 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1305099336374295013, guid: e8896062f9c5843c6ab83293064fad65, type: 3}
+  m_PrefabInstance: {fileID: 739473045}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac8c9f6aba11542e9b415d13fd38856e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RatePercentageMeter
 --- !u!114 &1256635790 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5177850450814409749, guid: d33a18852cbdd414ea22ea3732bcbf07, type: 3}
@@ -2383,6 +2394,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc2aabdfb0f9843e5a045cba7eee9682, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ProfileUI
+--- !u!114 &1264825131 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1814498261829117614, guid: e8896062f9c5843c6ab83293064fad65, type: 3}
+  m_PrefabInstance: {fileID: 739473045}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1001 &1335562801
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3464,9 +3486,33 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1053788007}
     - target: {fileID: 990081347288448619, guid: f16e725b879735e43b65f6e95326a27a, type: 3}
+      propertyPath: unlockText
+      value: 
+      objectReference: {fileID: 1264825131}
+    - target: {fileID: 990081347288448619, guid: f16e725b879735e43b65f6e95326a27a, type: 3}
+      propertyPath: percentageMeter
+      value: 
+      objectReference: {fileID: 1247712335}
+    - target: {fileID: 990081347288448619, guid: f16e725b879735e43b65f6e95326a27a, type: 3}
       propertyPath: unlockInformation
       value: 
       objectReference: {fileID: 2018693605}
+    - target: {fileID: 990081347288448619, guid: f16e725b879735e43b65f6e95326a27a, type: 3}
+      propertyPath: 'swipesPerStage.Array.data[0]'
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 990081347288448619, guid: f16e725b879735e43b65f6e95326a27a, type: 3}
+      propertyPath: 'swipesPerStage.Array.data[1]'
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 990081347288448619, guid: f16e725b879735e43b65f6e95326a27a, type: 3}
+      propertyPath: 'swipesPerStage.Array.data[2]'
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 990081347288448619, guid: f16e725b879735e43b65f6e95326a27a, type: 3}
+      propertyPath: 'swipesPerStage.Array.data[3]'
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 3176255722575054399, guid: f16e725b879735e43b65f6e95326a27a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 955.143

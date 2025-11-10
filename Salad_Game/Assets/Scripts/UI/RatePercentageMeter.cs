@@ -1,18 +1,21 @@
 using Sirenix.OdinInspector;
 using Unity.UI.Shaders.Sample;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RatePercentageMeter : MonoBehaviour
 {
     private Meter _meter;
+
     private void Awake()
     {
         _meter = GetComponent<Meter>();
-        SetPercentage(0);
+        if (_meter != null) _meter.Value = 0f;
     }
-    [Button]
-    public void SetPercentage(float percentageT)
+
+    public void SetPercentage(float normalized)
     {
-        _meter.Value = percentageT;
+        if (_meter == null) return;
+        _meter.Value = Mathf.Clamp01(normalized);
     }
 }
