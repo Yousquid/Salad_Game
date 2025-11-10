@@ -26,12 +26,27 @@ public class Ads : MonoBehaviour
         {
             int likeCount = MatchGenerator.Instance.likesNumber;
 
+
             if (likeCount % 3 == 0 && likeCount != lastAdCount)
             {
-                PlayRandomAd();
-                lastAdCount = likeCount;
+                int randomer = Random.Range(0, 10);
+                if (randomer >= 9)
+                {
+                    PlayRandomAd();
+                    lastAdCount = likeCount;
+                }
+                else
+                {
+                    MatchGenerator.Instance.likesNumber += Random.Range(1, 111);
+                }
             }
         }
+    }
+
+    public void StopPlaying()
+    {
+        OnVideoEnded(videoPlayer);
+        
     }
 
     public void PlayRandomAd()
