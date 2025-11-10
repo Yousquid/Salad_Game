@@ -1193,6 +1193,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 336808137886099092, guid: d33a18852cbdd414ea22ea3732bcbf07, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClickSuperLike
+      objectReference: {fileID: 0}
+    - target: {fileID: 336808137886099092, guid: d33a18852cbdd414ea22ea3732bcbf07, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: PlaySuperLike
       objectReference: {fileID: 0}
@@ -1647,6 +1651,10 @@ PrefabInstance:
     - target: {fileID: 6495581209171326542, guid: d33a18852cbdd414ea22ea3732bcbf07, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6495581209171326542, guid: d33a18852cbdd414ea22ea3732bcbf07, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClickReport
       objectReference: {fileID: 0}
     - target: {fileID: 6495581209171326542, guid: d33a18852cbdd414ea22ea3732bcbf07, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName

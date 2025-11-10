@@ -209,6 +209,17 @@ public class Navigation : MonoBehaviour
         MatchGenerator.Instance.likesNumber++;
     }
 
+    public void OnClickReport()
+    {
+        MatchGenerator.Instance.RecordReport();
+        GenerateNewProfile();
+    }
+
+    public void OnClickSuperLike()
+    {
+        MatchGenerator.Instance.RecordSuperLike();
+        GenerateNewProfile();
+    }
     private void PossibleInstantMatch()
     {
         float randomer = Random.Range(0, 100);

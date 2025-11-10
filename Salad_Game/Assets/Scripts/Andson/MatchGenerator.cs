@@ -81,7 +81,16 @@ public class MatchGenerator : Singleton<MatchGenerator>
         totalSwipesNumber++;
     }
 
+    public void RecordSuperLike()
+    {
+        totalSwipesNumber++;
 
+    }
+    public void RecordReport()
+    {
+        totalSwipesNumber++;
+
+    }
     public void OnClickSendAText()
     {
         
