@@ -1421,9 +1421,37 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6495581209171326542, guid: d33a18852cbdd414ea22ea3732bcbf07, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6495581209171326542, guid: d33a18852cbdd414ea22ea3732bcbf07, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6495581209171326542, guid: d33a18852cbdd414ea22ea3732bcbf07, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1757136672}
+    - target: {fileID: 6495581209171326542, guid: d33a18852cbdd414ea22ea3732bcbf07, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1165663680}
+    - target: {fileID: 6495581209171326542, guid: d33a18852cbdd414ea22ea3732bcbf07, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6495581209171326542, guid: d33a18852cbdd414ea22ea3732bcbf07, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayReport
+      objectReference: {fileID: 0}
+    - target: {fileID: 6495581209171326542, guid: d33a18852cbdd414ea22ea3732bcbf07, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6495581209171326542, guid: d33a18852cbdd414ea22ea3732bcbf07, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6510368900311414455, guid: d33a18852cbdd414ea22ea3732bcbf07, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -150
@@ -1973,6 +2001,10 @@ PrefabInstance:
       propertyPath: match
       value: 
       objectReference: {fileID: 8300000, guid: c2f002e1020d3497b9899e2067fb96a2, type: 3}
+    - target: {fileID: 6569095440782198809, guid: fe65e3ba43e6f4d058e4d71f9585be74, type: 3}
+      propertyPath: report
+      value: 
+      objectReference: {fileID: 8300000, guid: 5ccd08230fc714e37b0f44d8452325b8, type: 3}
     - target: {fileID: 6569095440782198809, guid: fe65e3ba43e6f4d058e4d71f9585be74, type: 3}
       propertyPath: unlock
       value: 
