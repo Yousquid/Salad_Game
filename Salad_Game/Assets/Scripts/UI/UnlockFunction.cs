@@ -8,6 +8,7 @@ public class UnlockFunction : MonoBehaviour
     public UnlockUI unlockUI;
     public RatePercentageMeter percentageMeter;
     public TMP_Text unlockText;
+    public ProfileUI profileUI;
 
     [Header("Unlock Thresholds")]
     public int[] swipesPerStage = new int[] { 5, 7, 10, 12 };
@@ -33,19 +34,24 @@ public class UnlockFunction : MonoBehaviour
 
     void Start()
     {
-        if (unlockUI != null) unlockUI.ResetUnlockUI();
+        if (unlockUI != null)
+            unlockUI.ResetUnlockUI();
+
         stageIndex = 0;
-        stageStartSwipeCount = MatchGenerator.totalSwipesNumber;
-        if (percentageMeter != null) percentageMeter.SetPercentage(0f);
-        UpdateUnlockText();
+        stageStartSwipeCount = 0;
+
+        if (percentageMeter != null)
+            percentageMeter.SetPercentage(0f);
+
+        if (unlockText != null)
+            unlockText.text = $"Rate <b><color=#00FF03>{swipesPerStage[0]}</color></b> More Profiles to Unlock";
     }
 
     void Update()
     {
-        int swipeCount = MatchGenerator.totalSwipesNumber;
-        CheckUnlocks(swipeCount);
-        UpdateProgress(swipeCount);
-        UpdateUnlockText();
+        int total = MatchGenerator.totalSwipesNumber;
+        UpdateProgress(total);
+        CheckUnlocks(total);
     }
 
     private void CheckUnlocks(int total)
@@ -53,64 +59,64 @@ public class UnlockFunction : MonoBehaviour
         if (!HasStage()) return;
 
         int need = swipesPerStage[stageIndex];
-        int stageProgress = total - stageStartSwipeCount;
+        int progress = total - stageStartSwipeCount;
 
-        if (stageProgress >= need)
+        if (progress >= need)
         {
-            if (stageIcons != null && stageIndex < stageIcons.Length &&
-                stageMessages != null && stageIndex < stageMessages.Length &&
-                unlockInformation != null)
-            {
-                unlockInformation.ShowUnlockInformation(stageIcons[stageIndex], stageMessages[stageIndex]);
-            }
-            if (unlockUI != null && stageIcons != null && stageIndex < stageIcons.Length)
-            {
-                unlockUI.UpdateUnlockUI(stageIcons[stageIndex]);
-            }
+            UnlockCurrentStage();
 
             stageStartSwipeCount = total;
             stageIndex++;
-            if (percentageMeter != null) percentageMeter.SetPercentage(0f);
+
+            if (percentageMeter != null)
+                percentageMeter.SetPercentage(0f);
+
+            if (!HasStage() && unlockText != null)
+            {
+                unlockText.text = "All features unlocked!";
+            }
         }
     }
 
     private void UpdateProgress(int total)
     {
-        if (percentageMeter == null) return;
-        if (!HasStage()) { percentageMeter.SetPercentage(0f); return; }
+        if (!HasStage() || percentageMeter == null) return;
 
         int need = swipesPerStage[stageIndex];
-        if (need <= 0) { percentageMeter.SetPercentage(0f); return; }
-
-        int stageProgress = Mathf.Max(0, total - stageStartSwipeCount);
-        float normalized = Mathf.Clamp01((float)stageProgress / need);
+        int progress = Mathf.Max(0, total - stageStartSwipeCount);
+        float normalized = Mathf.Clamp01((float)progress / need);
         percentageMeter.SetPercentage(normalized);
+
+        int remaining = Mathf.Max(0, need - progress);
+        if (unlockText != null)
+            unlockText.text = $"Rate <b><color=#00FF03>{remaining}</color></b> More Profiles to Unlock";
+    }
+
+    private void UnlockCurrentStage()
+    {
+        if (stageIndex >= stageIcons.Length || stageIndex >= stageMessages.Length) return;
+
+        UnlockUI.IconTypes icon = stageIcons[stageIndex];
+        string msg = stageMessages[stageIndex];
+
+        if (unlockInformation != null)
+            unlockInformation.ShowUnlockInformation(icon, msg);
+
+        if (unlockUI != null)
+            unlockUI.UpdateUnlockUI(icon);
+
+        if (profileUI != null)
+        {
+            if (icon == UnlockUI.IconTypes.SuperLike)
+                profileUI.showSuperLike = true;
+
+            if (icon == UnlockUI.IconTypes.Report)
+                profileUI.showReport = true;
+        }
     }
 
     private bool HasStage()
     {
         return swipesPerStage != null && stageIndex >= 0 && stageIndex < swipesPerStage.Length;
-    }
-
-    public int GetCurrentStageRemaining()
-    {
-        if (!HasStage()) return 0;
-        int need = swipesPerStage[stageIndex];
-        int stageProgress = Mathf.Max(0, MatchGenerator.totalSwipesNumber - stageStartSwipeCount);
-        return Mathf.Max(0, need - stageProgress);
-    }
-
-    private void UpdateUnlockText()
-    {
-        if (unlockText == null) return;
-
-        if (!HasStage())
-        {
-            unlockText.text = "All features unlocked!";
-            return;
-        }
-
-        int remaining = GetCurrentStageRemaining();
-        unlockText.text = $"Rate <b><color=#00FF03>{remaining}</color></b> More Profiles to Unlock";
     }
 }
