@@ -149,13 +149,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RandomFruit
   partListA:
-  - {fileID: 919132149155446097, guid: e06f5fee9d4c20f47b9e4902b6553c9c, type: 3}
-  - {fileID: 919132149155446097, guid: a86f0c8897cf68b42ac27a9d67f1756a, type: 3}
+  - {fileID: 919132149155446097, guid: bd3d753189c4b2a49bbae5d051219332, type: 3}
   partListB:
-  - {fileID: 919132149155446097, guid: dd46bbb171e30994bb6175a84526c8a8, type: 3}
-  - {fileID: 919132149155446097, guid: afebfe457a1e7d846937a7e2a12425ea, type: 3}
-  - {fileID: 919132149155446097, guid: 348874405e6f27145846ddff75684076, type: 3}
-  - {fileID: 919132149155446097, guid: 8f8665565d57bf34595be4095e68995c, type: 3}
+  - {fileID: 919132149155446097, guid: 5662db65d69720345aec99de858778fe, type: 3}
   partListC:
   - {fileID: 3013840861615642128, guid: 8aa4cd026b0ffd249b525d23133c236c, type: 3}
   spawnPoint: {fileID: 147532299}
@@ -1789,6 +1785,7 @@ MonoBehaviour:
   viewVipButton: {fileID: 442294849}
   chargeButton: {fileID: 1000576106}
   closeButton: {fileID: 1249324472}
+  paymentPanel: {fileID: 0}
   currentVip: 0
   totalMoney: 0
 --- !u!114 &1803625366
