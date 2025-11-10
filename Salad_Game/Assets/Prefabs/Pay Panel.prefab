@@ -446,7 +446,7 @@ MonoBehaviour:
   enableYPos: 0
   disableYPos: -1080
   lerpTime: 1
-  cardNumber: 400123456789010
+  cardNumber: 4000123456789010
   cardNumberInput: {fileID: 2536242765352611709}
   cardMM: 12
   cardMMInput: {fileID: 1778207105494751042}

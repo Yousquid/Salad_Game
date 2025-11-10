@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Unity.UI.Shaders.Sample;
+using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
@@ -98,10 +99,12 @@ public class Navigation : MonoBehaviour
 
                 if (mousePos.x < halfWidth)
                 {
+                    MatchGenerator.RecordUnlike();
                     GenerateNewProfile();
                 }
                 else
                 {
+                    MatchGenerator.RecordLike();
                     PossibleInstantMatch();
                 }
             }

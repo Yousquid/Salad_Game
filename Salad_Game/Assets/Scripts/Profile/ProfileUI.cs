@@ -20,14 +20,23 @@ public class ProfileUI : MonoBehaviour
     public GameObject QuestionPrefab;
     public Transform QuestionsParent;
 
-    [Header("Super Like")] 
-    public bool showSuperLike = true;
+    [Header("Super Like")]
+    public bool showSuperLike = false;
     public RectTransform SuperLike;
     public Vector2 superLikeYRange;
     public Vector2 superLikeLocalScaleRange;
     public float superShowThresholdY = 0.5f;
     public float superShowThresholdYMin = 0.2f;
     public float superLikeMaxScale = 1.8f;
+
+    [Header("Report")]
+    public bool showReport = false;
+    public RectTransform Report;
+    public Vector2 reportYRange;
+    public Vector2 reportLocalScaleRange;
+    public float reportShowThresholdY = 0.5f;
+    public float reportShowThresholdYMin = 0.2f;
+    public float reportMaxScale = 1.8f;
 
     [Header("Like & Nope")] 
     public float offsetY;
@@ -79,6 +88,30 @@ public class ProfileUI : MonoBehaviour
                 SuperLike.anchoredPosition = SuperLike.anchoredPosition.SetY(superLikeYRange.x);
                 SuperLike.localScale = new Vector3(superLikeLocalScaleRange.x, superLikeLocalScaleRange.x,
                     superLikeLocalScaleRange.x);
+            }
+        }
+
+        if (showReport)
+        {
+            if (ScrollRect.verticalNormalizedPosition < reportShowThresholdY)
+            {
+                var y = ExtensionMethods.Map(ScrollRect.verticalNormalizedPosition, reportShowThresholdYMin,
+                    reportShowThresholdY,
+                    reportYRange.y, reportYRange.x);
+                y = Mathf.Clamp(y, reportYRange.x, reportYRange.y);
+                Report.anchoredPosition = Report.anchoredPosition.SetY(y);
+
+                var s = ExtensionMethods.Map(ScrollRect.verticalNormalizedPosition, reportShowThresholdYMin,
+                    reportShowThresholdY,
+                    reportLocalScaleRange.y, reportLocalScaleRange.x);
+                s = Mathf.Clamp(s, reportLocalScaleRange.x, reportMaxScale);
+                Report.localScale = new Vector3(s, s, s);
+            }
+            else
+            {
+                Report.anchoredPosition = Report.anchoredPosition.SetY(reportYRange.x);
+                Report.localScale = new Vector3(reportLocalScaleRange.x, reportLocalScaleRange.x,
+                    reportLocalScaleRange.x);
             }
         }
 
