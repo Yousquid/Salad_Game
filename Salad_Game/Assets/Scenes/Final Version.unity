@@ -1063,7 +1063,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3099228360141809933, guid: d33a18852cbdd414ea22ea3732bcbf07, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -308.50082
+      value: -308.49997
       objectReference: {fileID: 0}
     - target: {fileID: 3358626042149799314, guid: d33a18852cbdd414ea22ea3732bcbf07, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1379,6 +1379,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8261256738989201949, guid: d33a18852cbdd414ea22ea3732bcbf07, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8261256738989201949, guid: d33a18852cbdd414ea22ea3732bcbf07, type: 3}
+      propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2376,12 +2380,32 @@ MonoBehaviour:
   partListA:
   - {fileID: 919132149155446097, guid: e06f5fee9d4c20f47b9e4902b6553c9c, type: 3}
   - {fileID: 919132149155446097, guid: a86f0c8897cf68b42ac27a9d67f1756a, type: 3}
+  - {fileID: 919132149155446097, guid: 002d902bd258dc343a46b9e017146b8b, type: 3}
+  - {fileID: 919132149155446097, guid: bc1e68b5be47ef047851bd40d833a42b, type: 3}
+  - {fileID: 919132149155446097, guid: ec2bd262c7fa4b7428f8dc54a361b2ef, type: 3}
+  - {fileID: 919132149155446097, guid: 4112bd3d7b0b8bb4da0068095439e940, type: 3}
+  - {fileID: 919132149155446097, guid: bd3d753189c4b2a49bbae5d051219332, type: 3}
   partListB:
   - {fileID: 919132149155446097, guid: 348874405e6f27145846ddff75684076, type: 3}
   - {fileID: 919132149155446097, guid: 8f8665565d57bf34595be4095e68995c, type: 3}
   - {fileID: 919132149155446097, guid: dd46bbb171e30994bb6175a84526c8a8, type: 3}
   - {fileID: 919132149155446097, guid: afebfe457a1e7d846937a7e2a12425ea, type: 3}
+  - {fileID: 919132149155446097, guid: 51caca73c4283b0439ee90a8732a775b, type: 3}
+  - {fileID: 919132149155446097, guid: 5662db65d69720345aec99de858778fe, type: 3}
+  - {fileID: 919132149155446097, guid: 868ff5a647c826d4a8e6b799eb364211, type: 3}
+  - {fileID: 919132149155446097, guid: 8a399c91e3228884c8b040c5cd25f8e1, type: 3}
+  - {fileID: 919132149155446097, guid: 7aa85ae8d72060f4fa4f048c1dfa446a, type: 3}
+  - {fileID: 919132149155446097, guid: ec86652712a23224b8dae1f949a3ca61, type: 3}
+  - {fileID: 919132149155446097, guid: ec02e7df18f7644429b874b392b173dd, type: 3}
   partListC:
+  - {fileID: 4618780874965430401, guid: 624ed6c53eec9437aabd805250c667ec, type: 3}
+  - {fileID: 919132149155446097, guid: cac5710b176456d4b926bfe357ce6e80, type: 3}
+  - {fileID: 919132149155446097, guid: acefa8c4ee71f8a429dc2f66836f9dae, type: 3}
+  - {fileID: 919132149155446097, guid: 32999c3b90701c64e84ff5c9cd27c738, type: 3}
+  - {fileID: 919132149155446097, guid: 2f2b438aa88c0dc4b93a077658fc9df6, type: 3}
+  - {fileID: 919132149155446097, guid: 55d148d0e97ce9442b2ddf42542e0349, type: 3}
+  - {fileID: 919132149155446097, guid: 26e5307520e56014b96d18a40eebec1b, type: 3}
+  - {fileID: 4618780874965430401, guid: 624ed6c53eec9437aabd805250c667ec, type: 3}
   - {fileID: 4618780874965430401, guid: 624ed6c53eec9437aabd805250c667ec, type: 3}
   spawnPoint: {fileID: 1689853192}
   useSpawnOffset: 1
