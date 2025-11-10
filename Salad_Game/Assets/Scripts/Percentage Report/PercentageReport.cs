@@ -51,5 +51,7 @@ public class PercentageReport : MonoBehaviour
     {
         percentageReportLeft.rectTransform.DOAnchorPosX(percentageReportLeftMinMaxX.x, 0);
         percentageReportRight.rectTransform.DOAnchorPosX(percentageReportRightMinMaxX.x, 0);
+        DOTween.Kill(percentageReportLeft);
+        DOTween.Kill(percentageReportRight);
     }
 }

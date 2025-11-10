@@ -125,7 +125,7 @@ public class Navigation : MonoBehaviour
                         {
                             StopCoroutine(_showPercentageReportCoroutine);
                         }
-                        StartCoroutine(ShowPercentageReportRoutine(GenerateNewProfile));
+                        _showPercentageReportCoroutine = StartCoroutine(ShowPercentageReportRoutine(GenerateNewProfile));
                     }
                     else
                     {
@@ -142,7 +142,7 @@ public class Navigation : MonoBehaviour
                         {
                             StopCoroutine(_showPercentageReportCoroutine);
                         }
-                        StartCoroutine(ShowPercentageReportRoutine(PossibleInstantMatch));
+                        _showPercentageReportCoroutine = StartCoroutine(ShowPercentageReportRoutine(PossibleInstantMatch));
                     }
                     else
                     {
