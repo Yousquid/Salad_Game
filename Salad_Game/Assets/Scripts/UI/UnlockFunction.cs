@@ -9,6 +9,7 @@ public class UnlockFunction : MonoBehaviour
     public RatePercentageMeter percentageMeter;
     public TMP_Text unlockText;
     public ProfileUI profileUI;
+    public ProfileDataGenerator profileDataGenerator;
 
     [Header("Unlock Thresholds")]
     public int[] swipesPerStage = new int[] { 5, 7, 10, 12 };
@@ -113,10 +114,23 @@ public class UnlockFunction : MonoBehaviour
             if (icon == UnlockUI.IconTypes.Report)
                 profileUI.showReport = true;
         }
+
+        if (icon == UnlockUI.IconTypes.Percentage && profileDataGenerator != null)
+        {
+            ApplyThirdStageAdjustments(profileDataGenerator);
+        }
     }
 
     private bool HasStage()
     {
         return swipesPerStage != null && stageIndex >= 0 && stageIndex < swipesPerStage.Length;
+    }
+
+    private void ApplyThirdStageAdjustments(ProfileDataGenerator gen)
+    {
+        gen.interestsAmtRange = new Vector2Int(1, 4);
+        gen.qaAmtRange = new Vector2Int(1, 3);
+        gen.personalitiesAmtRange = new Vector2Int(2, 6);
+        gen.temperamentAmtRange = new Vector2Int(2, 6);
     }
 }
