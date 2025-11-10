@@ -10,6 +10,12 @@ using Random = UnityEngine.Random;
 
 public class Navigation : MonoBehaviour
 {
+    private bool _started;
+    public bool Started
+    {
+        get => _started;
+        set => _started = value;
+    }
     public UnlockFunction unlockFunction;
     public PercentageReport percentageReport;
     [Range(0, 1)] public float showPercentageReportChance = 0.5f;
@@ -71,6 +77,8 @@ public class Navigation : MonoBehaviour
 
     void Update()
     {
+        if(!_started) return;
+        
         var mouse = Mouse.current;
         if (mouse == null) return;
 
