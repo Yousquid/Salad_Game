@@ -11,7 +11,8 @@ public struct PlaySFXEvent
         Match,
         Unlock,
         SuperLike,
-        Report
+        Report,
+        Click
     }
     public SFXType sfxType;
     public PlaySFXEvent(SFXType type)
@@ -28,6 +29,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip superLike;
     public AudioClip report;
     public static AudioManager Instance;
+    public AudioClip click;
 
     private void Awake()
     {
@@ -54,6 +56,9 @@ public class AudioManager : MonoBehaviour
                     break;
                 case PlaySFXEvent.SFXType.Report:
                     PlayReport();
+                    break;
+                case PlaySFXEvent.SFXType.Click:
+                    PlayClick();
                     break;
             }
         });
@@ -89,6 +94,10 @@ public class AudioManager : MonoBehaviour
         Play(clip, volume);
     }
 
+    public void PlayClick()
+    {
+        Play(click);
+    }
     private async void Play(AudioClip clip, float volume = 1)
     {
         AudioSource source = gameObject.AddComponent<AudioSource>();

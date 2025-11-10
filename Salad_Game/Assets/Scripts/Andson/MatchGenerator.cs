@@ -47,6 +47,11 @@ public class MatchGenerator : Singleton<MatchGenerator>
     private void Update()
     {
         //RunMatchTimer();
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            AudioManager.Instance.PlayClick();
+        }
     }
 
     public int GetLikeNumbers()
