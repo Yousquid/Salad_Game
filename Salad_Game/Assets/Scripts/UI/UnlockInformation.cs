@@ -48,9 +48,6 @@ public class UnlockInformation : MonoBehaviour
             case UnlockUI.IconTypes.Percentage:
                 iconImage.sprite = percentageIcon;
                 break;
-            case UnlockUI.IconTypes.LikePassTags:
-                iconImage.sprite = likePassTagsIcon;
-                break;
         }
         informationText.text = information;
         if(_unlockUI != null) _unlockUI.UpdateUnlockUI(iconType);

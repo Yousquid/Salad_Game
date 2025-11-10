@@ -20,14 +20,12 @@ public class UnlockFunction : MonoBehaviour
         UnlockUI.IconTypes.SuperLike,
         UnlockUI.IconTypes.Report,
         UnlockUI.IconTypes.Percentage,
-        UnlockUI.IconTypes.LikePassTags
     };
     public string[] stageMessages = new string[]
     {
         "Super Like unlocked!",
         "Report unlocked!",
-        "Percentage unlocked!",
-        "Like/Pass unlocked!"
+        "Percentage unlocked!"
     };
 
     private int stageIndex = 0;

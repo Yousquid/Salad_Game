@@ -7,13 +7,11 @@ public class UnlockUI : MonoBehaviour
     public Image superLikeIcon;
     public Image reportIcon;
     public Image percentageIcon;
-    public Image likePassTagsIcon;
     public enum IconTypes
     {
         SuperLike,
         Report,
         Percentage,
-        LikePassTags
     }
 
     private void Start()
@@ -25,7 +23,6 @@ public class UnlockUI : MonoBehaviour
         superLikeIcon.gameObject.SetActive(false);
         reportIcon.gameObject.SetActive(false);
         percentageIcon.gameObject.SetActive(false);
-        likePassTagsIcon.gameObject.SetActive(false);
     }
     public void UpdateUnlockUI(IconTypes iconType)
     {
@@ -39,9 +36,6 @@ public class UnlockUI : MonoBehaviour
                 break;
             case IconTypes.Percentage:
                 percentageIcon.gameObject.SetActive(true);
-                break;
-            case IconTypes.LikePassTags:
-                likePassTagsIcon.gameObject.SetActive(true);
                 break;
         }
     }
